@@ -1,0 +1,48 @@
+<input type="text" id="item">
+<button onclick="run()">Click</button>
+
+<h1 id="demo"></h1>
+
+<script type="text/javascript">
+
+function run(){
+	
+	x = document.getElementById('item').value;
+	y = document.createElement('br');
+
+	document.getElementById("demo").append( x );
+	document.getElementById("demo").appendChild( y );
+
+}
+</script>
+
+<h2>Fruits</h2>
+<button onclick="addfruit()">Add New</button>
+<br>
+<br>
+
+<form id="form">
+	<input type="submit" value="Submit">
+	<input type="text" name="fruits[]">
+</form>
+
+
+<script type="text/javascript">
+	function addfruit(){
+		x = document.createElement('input');
+
+		x.setAttribute('type','text');
+		x.setAttribute('name','fruits[]');
+		
+		document.getElementById('form').appendChild(x);
+	}
+</script>
+
+<style type="text/css">
+	#form input{
+		display: block;
+		margin: 5px;
+		padding: 5px;
+		border: 2px  solid black;
+	}
+</style>
