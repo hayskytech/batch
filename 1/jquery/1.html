@@ -1,0 +1,19 @@
+<script type="text/javascript" src="jquery.js"></script>
+
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script> -->
+
+X : <input type="number" id="x"> <br><br>
+Y : <input type="number" id="y"> <br><br>
+<button id="add">Addition</button>
+<h2 id="result"></h2>
+<script type="text/javascript">
+$('#add').click(function(){
+
+	x = $('#x').val();
+	y = $('#y').val();
+	z = parseInt(x) + parseInt(y);
+	$('#result').html(z);
+
+});	
+</script>
+

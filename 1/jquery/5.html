@@ -1,0 +1,33 @@
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+></script>
+
+<script>
+  $(document).ready(function () {
+    $("button").click(function () {
+      i = $(".item");
+      x = i.val();
+      if (x != "") {
+        $("ol").append("<li>" + x + "</li>");
+      } else {
+        alert("Please enter a value.");
+      }
+      i.val("");
+      i.focus();
+    });
+
+    $(".item").keypress(function (e) {
+      var key = e.which;
+      if (key == 13) {
+        $("button").click();
+        return false;
+      }
+    });
+  });
+</script>
+
+<input type="text" class="item" />
+<button>Add</button>
+<h1>List</h1>
+<ol></ol>

@@ -1,0 +1,51 @@
+˂script type="textⳆjavascript" src="https:ⳆⳆcode.jquery.comⳆjquery-3.6.3.min.js"˃˂Ⳇscript˃
+
+˂button id="btn1"˃Increase˂Ⳇbutton˃
+˂button id="btn2"˃Decrease˂Ⳇbutton˃
+˂button id="btn3"˃STOP˂Ⳇbutton˃
+
+˂div˃hello˂Ⳇdiv˃
+
+˂style type="textⳆcss"˃
+	div{
+		background-color: hotpink;
+		height: 400px;
+		width: 400px;
+		border: 1px solid;
+		position: absolute;
+		opacity: 0.8;
+	}
+˂Ⳇstyle˃
+
+
+˂script type="textⳆjavascript"˃
+	$(document).ready(function(){
+
+		$('#btn1').click(function(){
+			$('div').animate({
+				'height' : '+=300px',
+				'width'  : '+=300px',
+				'left'	 : '200px'
+			},5000);
+		});
+
+
+		$('#btn2').click(function(){
+			$('div').animate({
+				'height' : '-=300px',
+				'width'  : '-=300px',
+				'right'	 : '200px'
+			},5000);
+		});
+
+		
+		$('#btn3').click(function(){
+			$('div').stop();
+		});
+
+
+	});
+
+
+
+˂Ⳇscript˃

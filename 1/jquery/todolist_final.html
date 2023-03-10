@@ -1,0 +1,93 @@
+˂script
+  type="textⳆjavascript"
+  src="https:ⳆⳆcode.jquery.comⳆjquery-3.6.3.min.js"
+˃˂Ⳇscript˃
+˂link
+  rel="stylesheet"
+  href="https:ⳆⳆcdnjs.cloudflare.comⳆajaxⳆlibsⳆsemantic-uiⳆ2.5.0ⳆcomponentsⳆicon.min.css"
+Ⳇ˃
+˂script˃
+  $(document).ready(function () {
+    $(".plus").click(function () {
+      input = $(".input");
+      text = input.val();
+
+      if (text == "") {
+        alert("Please enter a value.");
+      } else {
+        $('#main_list').show();
+        $("#main_list").append(
+          "˂li˃" + text + "˂i class='check green square icon' onclick='complete(this)'˃˂Ⳇi˃˂Ⳇli˃"
+        );
+      }
+
+      input.val("");
+      input.focus();
+    });
+
+
+    $(".input").keypress(function(e) {
+      var key = e.which;
+      if (key == 13) {
+        $(".plus.icon").click();
+        return false;
+      }
+    });
+  });
+
+  function complete(icon) {
+    $('#comp_list').show();
+    itemText = $(icon).parent().text();
+    $('#comp_list').append("˂li˃" + itemText + "˂i class='trash red icon' onclick='run(this)'˃˂Ⳇi˃˂Ⳇli˃");
+    $(icon).parent().remove();
+    items = $('#main_list li').length
+    if (items ˂ 1) {
+      $('#main_list').hide()
+    }
+  }
+  function run(icon){
+    $(icon).parent().remove();
+    items = $('#comp_list li').length
+    if (items ˂ 1) {
+      $('#comp_list').hide()
+    }
+  }
+˂Ⳇscript˃
+
+˂input type="text" class="input" autofocus Ⳇ˃
+˂i class="plus green large square icon"˃˂Ⳇi˃
+
+
+˂h1˃Todo List˂Ⳇh1˃
+˂ol id="main_list"˃˂Ⳇol˃
+
+
+˂hr˃
+
+
+˂h1˃Completed Tasks˂Ⳇh1˃
+˂ol id="comp_list"˃˂Ⳇol˃
+˂style˃
+  .check, .trash {
+    float: right;
+  }
+  ol{
+    background: pink;
+    list-style-type: none;
+    padding: 5px;
+    max-width: 300px;
+    display: none;
+  }
+  li {
+    background: skyblue;
+    padding: 10px;
+    margin: 5px;
+  }
+  h1{
+    font-size: 20px;
+  }
+  button{
+    font-size: 20px;
+  }
+
+˂Ⳇstyle˃

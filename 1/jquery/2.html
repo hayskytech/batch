@@ -1,0 +1,23 @@
+<script type="text/javascript" src="jquery.js"></script>
+
+<h1>aysgd ausd</h1>
+
+<button id="btn1">Get</button>
+<button id="btn2">Set</button>
+
+<script type="text/javascript">
+$('#btn1').click(function(){
+
+	x = $('h1').html();
+	c = $('h1').css('color');
+	alert(c);
+
+});	
+$('#btn2').click(function(){
+
+	$('h1').html('hello');
+	$('h1').css('color','red');
+
+});	
+</script>
+
