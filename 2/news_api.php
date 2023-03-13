@@ -9,12 +9,19 @@ $data = json_decode( $raw ); 					// converting string data to our (php) format
 for ($i = 0; $i < count($data); $i++){
 
 	$post = $data[$i]; 									// storing each post in $post
+	$id = $post->id;
+	$img = $post->jetpack_featured_media_url;
+	$title = $post->title->rendered;
+?>
+
+	<div class="article">
+		<a href="news_single.php?id=<?php echo $id; ?>">
+			<img src="<?php echo $img; ?>">
+		</a>
+		<h1><?php echo $title; ?></h1>
+	</div>
 	
-	echo '<div class="article">';
-	echo '<img src="' . $post->jetpack_featured_media_url . '">';
-	echo '<h1>' . $post->title->rendered . '</h1>';
-	// echo '<p>' .  $post->content->rendered . '</p>';
-	echo '</div>';
+	<?php
 }
 
 
