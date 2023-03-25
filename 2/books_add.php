@@ -33,6 +33,7 @@ if (isset($_POST['add'])) {
 <?php 
 $sql = "SELECT * FROM books";
 $result = $conn->query($sql);
+$i = 1;
 ?>
 <table border="1">
 	<tr>
@@ -43,9 +44,7 @@ $result = $conn->query($sql);
 		<th>Price</th>
 	</tr>
 <?php
-$i = 1;
-while ($row = $result->fetch_assoc()) { 
-	
+while ($row = $result->fetch_assoc()) {
 	?>
 	<tr>
 		<td><?php echo $i++; ?>)</td>
@@ -57,9 +56,8 @@ while ($row = $result->fetch_assoc()) {
 	</tr>
 	<?php
 }
-echo '</table>';
-
 ?>
+</table>
 
 <style type="text/css">
 	table,td,th{
