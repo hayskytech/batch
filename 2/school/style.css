@@ -1,0 +1,20 @@
+body{
+	font-size: 20px;
+	font-family: Arial;
+}
+#menu{
+	background-color: skyblue;
+	padding: 5px;
+	border: 2px solid black;
+}
+#menu a{
+	color: blue;
+	background-color: orange;
+	padding: 10px;
+	display: inline-block;
+	text-decoration: none;
+}
+#menu a:hover{
+	background-color: brown;
+	color: white;
+}
