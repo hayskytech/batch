@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/icon.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<form>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+<i class="eye icon slash"></i>
+<br>
+<input type="submit" value="Submit">
+</form>
+
+
+<script type="text/javascript">
+$('.eye').click(togglePass);
+function togglePass(){
+  p = $('#password');
+  ptype = p.attr('type');
+  eye = $('.eye');
+
+  if ( ptype == 'password') {
+    p.attr('type','text');
+    eye.removeClass('slash');
+  } else {
+    p.attr('type','password');
+    eye.addClass('slash');
+  }
+}
+
+</script>

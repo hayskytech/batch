@@ -1,0 +1,19 @@
+<h1 id="demo">Hello world</h1>
+<button onclick="run()">Dark mode</button>
+<button onclick="run2()">Light mode</button>
+<script type="text/javascript">
+
+function run(){
+
+	x = document.getElementById("demo")
+	x.innerHTML = 'hai';
+	x.style.color = "red";
+	x.style.fontSize = '20px';
+	x.style.backgroundColor = 'skyblue';
+	document.body.style.backgroundColor = 'grey';
+}
+function run2(){
+	document.body.style.backgroundColor = 'white'
+}
+
+</script>
