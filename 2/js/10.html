@@ -1,0 +1,28 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<button id="btn1">Hide it</button>
+<button id="btn2">Show it</button>
+<button id="btn3">Show/Hide</button>
+<h2>Hello world</h2>
+
+<script type="text/javascript">
+	$('#btn1').click(function(){
+		$('h2').hide();
+	})
+
+	$('#btn2').click(function(){
+		$('h2').show();
+	})
+
+	$('#btn3').click(function(){
+		$('h2').toggle();
+	})
+</script>
+
+
+<style type="text/css">
+	h2{
+		background-color: skyblue;
+		color: blue;
+	}
+</style>
