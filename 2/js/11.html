@@ -1,0 +1,45 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/icon.min.css">
+<style type="text/css">
+	h2{
+		font-family: Arial;
+	}
+	body{
+		background-color: rgb(255, 255, 255);
+	}
+</style>
+
+<button id="light">Light</button>
+<button id="dark">Dark</button>
+<button id="toggle">Toggle</button>
+<i class="sun icon" id="mode_icon"></i>
+
+
+<script type="text/javascript">
+	jQuery('#light').click(function(){
+		jQuery('body').css('background-color','white')
+	})
+	jQuery('#dark').click(function(){
+		jQuery('body').css('background-color','grey')
+	})
+	jQuery('#toggle').click(function(){
+		x = jQuery('body').css('background-color')
+
+		if (x == 'rgb(255, 255, 255)') {
+			jQuery('body').css('background-color','grey')
+		} else {
+			jQuery('body').css('background-color','white')
+		}
+	})
+	jQuery('#mode_icon').click(function(){
+		jQuery('#mode_icon').toggleClass('sun');
+		jQuery('#mode_icon').toggleClass('moon');
+
+		x = jQuery('body').css('background-color')
+		if (x == 'rgb(255, 255, 255)') {
+			jQuery('body').css('background-color','grey')
+		} else {
+			jQuery('body').css('background-color','white')
+		}
+	})
+</script>
