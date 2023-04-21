@@ -1,0 +1,79 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<input type="text">
+<button id="btn1">Append</button>
+<button id="btn2">Prepend</button>
+<button id="btn3">Before</button>
+<button id="btn4">After</button>
+<br>
+<button id="btn5">Remove</button>
+<button id="btn6">Empty</button>
+<button id="btn7">Show / Hide</button>
+<button id="btn8">Fade</button>
+<button id="btn9">Slide</button>
+<br>
+<h1>Hello</h1>
+
+
+<script type="text/javascript">
+	i = $('input');
+	h1 = jQuery('h1');
+
+	$('#btn1').click(function(){
+		h1.append(i.val())
+	})
+	$('#btn2').click(function(){
+		h1.prepend(i.val())
+	})
+	$('#btn3').click(function(){
+		h1.before(i.val())
+	})
+	$('#btn4').click(function(){
+		h1.after(i.val())
+	})
+	$('#btn5').click(function(){
+		h1.remove();
+	});
+	$('#btn6').click(function(){
+		h1.empty();
+	});
+	$('#btn7').click(function(){
+		h1.toggle();
+	});
+	$('#btn8').click(function(){
+		h1.fadeToggle(2000);
+	});
+	$('#btn9').click(function(){
+		h1.slideToggle(2000);
+	});
+
+</script>
+
+<style type="text/css">
+	h1{
+		display: inline-block;
+		background-color: skyblue;
+	}
+</style>
+<br>
+
+
+
+<script type="text/javascript">
+/*
+$('button').click(function(){
+	id = $(this).attr('id');
+	switch (id){
+		case 'btn1':
+			h1.append(i.val());
+			break;
+		case 'btn2':
+			h1.prepend(i.val());
+			break;
+		case 'btn3':
+			h1.before(i.val());
+			break;
+	}
+});
+*/
+</script>
