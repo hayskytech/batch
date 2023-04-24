@@ -1,0 +1,30 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<h2>ToDo List</h2>
+<input type="text" autofocus>
+<button>ok</button>
+
+<ol></ol>
+
+
+<script type="text/javascript">
+  $('button').click(add_item);
+
+  $('input').on('keypress',function(event){
+    if (event.key === "Enter") {
+      event.preventDefault();
+      add_item();
+    }
+  });
+
+  function add_item(){
+    inp = $('input');
+    x = inp.val();
+    if (x!='') {
+      $('ol').append(`<li>${x}</li>`)
+    }
+    inp.val('')
+    inp.focus()
+  }
+
+</script>
