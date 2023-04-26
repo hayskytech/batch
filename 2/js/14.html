@@ -1,0 +1,46 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+
+<button id="btn1">FadeIn</button>
+<button id="btn2">FadeOut</button>
+<button id="btn3">FadeToggle</button>
+<button id="btn4">Animate</button>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<script type="text/javascript">
+  $('#btn1').on('click',function(){
+    $('p').slideUp(2000)
+  })
+  $('#btn2').on('click',function(){
+    $('p').slideDown(2000)
+  })
+  $('#btn3').on('click',function(){
+    $('p').slideToggle(500)
+  })
+  $('#btn4').on('click',function(){
+    $('div').animate({
+      'height' : '+=50px',
+      'width'  : '+=50px'
+    },500);
+    $('p').animate({
+      'font-size' : '+=2px'
+    },500);
+  })
+
+</script>
+
+<style type="text/css">
+  div{
+    height: 300px;
+    width: 300px;
+    background-color: hotpink;
+    padding: 20px;
+    border: 2px solid;
+  }
+</style>
