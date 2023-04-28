@@ -1,0 +1,58 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/icon.min.css">
+
+Enter text: <input autofocus><button>ADD Item</button>
+<ol></ol>
+
+<script type="text/javascript">
+	$('button').on('click',add_item);
+	$('input').on('keypress',function(event){
+		if (event.key==='Enter') {
+			event.preventDefault();
+			add_item();
+		}
+	});
+
+	function add_item(){
+		val = $('input').val();
+		if (val=='') {
+			return
+		}
+		icon = '<i class="minus circle red icon"></i>'
+		// $('ol').append('<li>' + x + '</li>');
+		$('ol').append(`<li>${val} ${icon}</li>`);
+		$('input').val('');
+		$('input').focus();
+
+		$('.minus').on('click',function(){
+			$(this).parent().remove();
+		});
+	}
+
+</script>
+
+<style type="text/css">
+li {
+	max-width: 300px;
+	background: pink;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid;
+}
+	
+li:hover{
+	background: skyblue;
+}
+
+ol {
+	list-style-position: inside;
+	padding: 0;
+}
+
+i.minus.circle.red.icon {
+	float: right;
+	cursor: pointer;
+}
+</style>
