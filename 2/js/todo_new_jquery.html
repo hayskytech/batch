@@ -1,0 +1,76 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/icon.min.css" />
+
+Enter text: <input autofocus />
+<button>ADD Item</button>
+<ol></ol>
+
+<script type="text/javascript">
+	list = JSON.parse(localStorage.getItem("list"));
+	if (list) {
+		render_items();
+	} else {
+		list = [];
+	}
+	$("button").on("click", add_item);
+	$("input").on("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			add_item();
+		}
+	});
+
+	function add_item() {
+		val = $("input").val();
+		if (val == "") {
+			return;
+		}
+		list.push(val);
+		render_items();
+		$("input").val("");
+		$("input").focus();
+	}
+	function render_items() {
+		icon =
+			'<i class="minus circle red icon" onclick="remove_this(this)" title="Remove this"></i>';
+		var str = "";
+		for (var i = 0; i < list.length; i++) {
+			str += `<li index="${i}">${list[i]} ${icon}</li>`;
+		}
+		$("ol").html(str);
+		const myJSON = JSON.stringify(list);
+		localStorage.setItem("list", myJSON);
+	}
+	function remove_this(e) {
+		const id = $(e).parent().attr("index");
+		list.splice(id, 1);
+		render_items();
+	}
+</script>
+
+<style type="text/css">
+	li {
+		max-width: 300px;
+		background: pink;
+		margin: 5px;
+		padding: 5px;
+		border-radius: 5px;
+		border: 1px solid;
+	}
+
+	li:hover {
+		background: skyblue;
+	}
+
+	ol {
+		list-style-position: inside;
+		padding: 0;
+	}
+
+	i.minus.circle.red.icon {
+		float: right;
+		cursor: pointer;
+	}
+</style>
