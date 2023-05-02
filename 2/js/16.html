@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button onclick="run()">Get Data</button>
+	<div id="main"></div>
+	<script>
+		function run() {
+			const newsurl = "http://telugunewsadda.com/wp-json/wp/v2/posts?_fields=id,title,content,slug,jetpack_featured_media_url&per_page=9";
+			const x = new XMLHttpRequest();
+			x.onload = function () {
+				data = JSON.parse(this.responseText)
+				articles = ''
+				for (i = 0; i < data.length; i++) {
+					title = data[i].title.rendered
+					image = data[i].jetpack_featured_media_url
+					articles += `<div class="item">
+					<div class="content">
+						<img src="${image}">
+						<h1>${title}</h1>
+					</div>
+					</div>`
+				}
+				document.getElementById('main').innerHTML = articles
+			}
+			x.open("GET", newsurl, true);
+			x.send();
+		}
+		run();
+	</script>
+
+	<style>
+		.item {
+			width: 24%;
+			/* height: 250px; */
+			float: left;
+			display: inline-block;
+		}
+
+		.content {
+			padding: 10px;
+			margin: 10px;
+			border: 2px solid;
+		}
+
+		.content img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+		}
+
+		h1 {
+			font-size: 20px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			/* number of lines to show */
+			line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+	</style>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
