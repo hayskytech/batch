@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div style="text-align: center;">
+		<button onclick="inc()">+</button>
+		<button onclick="dec()">-</button>
+		BG:<input type="color" onchange="bg(this)">
+		Text:<input type="color" onchange="text1(this)">
+	</div>
+
+	<h1>Hello</h1>
+	<p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt voluptate nisi quae
+		delectus commodi
+		rem deleniti non numquam hic, nostrum consectetur vel, quidem dolor! Aut nemo voluptatum iure ipsa.</p>
+	<script>
+		x = document.getElementById('para1');
+		a = x.style.fontSize
+		if (a == '') {
+			a = '16px'
+		}
+		b = a.substring(0, a.length - 2);
+		b = parseInt(b)
+		function inc() {
+			b = b + 2
+			x.style.fontSize = b + 'px'
+		}
+		function dec() {
+			b = b - 2
+			x.style.fontSize = b + 'px'
+		}
+		function bg(e) {
+			document.body.style.backgroundColor = e.value;
+		}
+		function text1(e) {
+			document.body.style.color = e.value
+		}
+	</script>
+</body>
+
+</html>
