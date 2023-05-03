@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<ol id="topics"></ol>
+	<script>
+		const newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/languages";
+		const x = new XMLHttpRequest();
+		x.onload = function () {
+			data = JSON.parse(this.responseText)
+			topics = ''
+			for (i = 0; i < data.length; i++) {
+				title = data[i]
+				topics += `<li>${title}</li>`
+			}
+			document.getElementById('topics').innerHTML = topics
+		}
+		x.open("GET", newsurl, true);
+		x.send();
+	</script>
+</body>
+
+</html>
