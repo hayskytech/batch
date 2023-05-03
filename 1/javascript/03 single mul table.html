@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="number" onchange="run()" id="tables" value="1" max="20" min="1">
+	<button onclick="run()">Load Table</button>
+	<div id="main"></div>
+	<script>
+		function run() {
+			n = document.getElementById('tables').value;
+			n = parseInt(n)
+			t = ''
+			for (i = 1; i <= 10; i++) {
+				p = n * i
+				t += `<br> ${n} x ${i} = ${p} `
+			}
+			document.getElementById('main').innerHTML = t
+		}
+		run()
+	</script>
+</body>
+
+</html>

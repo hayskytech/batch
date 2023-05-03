@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text" id="field" autofocus>
+	<button id="btn">Add Item</button>
+	<ol id="list"></ol>
+
+	<script>
+		items = ''
+		btn = document.getElementById('btn')
+		btn.addEventListener('click', addItem)
+		field = document.getElementById('field');
+
+		function addItem() {
+			v = field.value
+			items += `<li>${v}</li>`
+			document.getElementById('list').innerHTML = items
+			field.value = ''
+			field.focus()
+		}
+		field.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				addItem();
+			}
+		});
+	</script>
+
+</body>
+
+</html>
