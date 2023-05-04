@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Multiplication Table Generator</h2>
+	Enter number of tables:
+	<input type="number" id="field" onchange="run()" value="10">
+	<button onclick="run()">OK</button><br><br>
+	<div id="main"></div>
+	<script>
+		run()
+		function run() {
+			n = document.getElementById("field").value;
+			str = ''
+			for (t = 1; t <= n; t++) {
+				str += '<div class="table">'
+				for (l = 1; l <= 10; l++) {
+					p = t * l
+					str += `${t} x ${l} = ${p} <br>`
+				}
+				str += '</div>'
+			}
+			document.getElementById('main').innerHTML = str;
+		}
+	</script>
+
+	<style>
+		* {
+			font-size: 20px;
+		}
+
+		h2 {
+			font-size: 35px;
+		}
+
+		.table {
+			display: inline-block;
+			padding: 7px;
+			border: 2px solid;
+			margin: 5px;
+		}
+	</style>
+</body>
+
+</html>

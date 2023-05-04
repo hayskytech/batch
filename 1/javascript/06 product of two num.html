@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	Enter x: <input type="number" id="x" value="5" onchange="addition()"><br>
+	Enter y: <input type="number" id="y" value="3" onchange="addition()"><br>
+	<button onclick="addition()">Multiply</button>
+	<h2 id="result"></h2>
+	<script>
+		function addition() {
+			x = document.getElementById('x').value;
+			y = document.getElementById('y').value;
+			z = parseInt(x) * parseInt(y)
+			document.getElementById("result").innerText = `Product of ${x} and ${y} is ${z}`
+		}
+		addition()
+	</script>
+</body>
+
+</html>
