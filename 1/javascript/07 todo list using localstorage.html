@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text">
+	<button>Add Item</button>
+	<button>Clear All</button>
+	<ol></ol>
+
+	<script>
+		field = document.getElementsByTagName('input')[0]
+		btn = document.getElementsByTagName('button')[0]
+		clr = document.getElementsByTagName('button')[1]
+		ol = document.getElementsByTagName('ol')[0]
+
+		raw = localStorage.getItem("list")
+		if (raw == '') {
+			list = []
+		} else {
+			list = JSON.parse(raw);
+			loadItems()
+		}
+		function loadItems() {
+			ol.innerHTML = ''
+			for (i = 0; i < list.length; i++) {
+				li = document.createElement('li');
+				// li.innerHTML = ${list[i]}
+				li.innerHTML = `${list[i]} <button onclick="del(${i})">x</button>`
+				ol.appendChild(li)
+			}
+		}
+
+		btn.addEventListener('click', addItem);
+		function addItem() {
+			if (field.value == '') {
+				return
+			}
+			list.push(field.value);
+			localStorage.setItem('list', JSON.stringify(list));
+			field.value = ''
+			field.focus()
+			loadItems()
+		}
+		field.addEventListener('keypress', handleKey)
+		function handleKey(event) {
+			if (event.key == 'Enter') {
+				addItem()
+			}
+		}
+		function del(b) {
+			list.splice(b, 1)
+			localStorage.setItem('list', JSON.stringify(list));
+			loadItems()
+		}
+
+		clr.addEventListener('click', clearAll);
+		function clearAll() {
+			if (confirm("Remove all items?")) {
+				ol.innerHTML = ''
+				localStorage.setItem("list", '')
+				list = []
+			}
+		}
+	</script>
+
+	<style>
+		li button {
+			float: right;
+		}
+
+		li {
+			height: 25px;
+			width: 300px;
+		}
+	</style>
+</body>
+
+</html>
