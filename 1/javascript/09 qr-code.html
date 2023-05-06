@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QR Code Generator</title>
+</head>
+
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+	<input type="text" id="txt" value="https://google.com">
+	<button onclick="run()">Generate</button>
+	<div id="qrcode"></div>
+
+	<script>
+		qr = new QRCode("qrcode");
+		txt = document.getElementById("txt")
+		function run() {
+			if (txt.value == '') {
+				return
+			}
+			qr.makeCode(txt.value)
+		}
+		run()
+	</script>
+	<style>
+		#qrcode {
+			margin-top: 15px;
+		}
+
+		* {
+			font-size: 22px;
+		}
+	</style>
+
+	<br />
+
+	upi://pay?pa=mdsufyan71@ybl&pn=Shaik Mohammad Sufyan&cu=INR&am=2000
+
+</body>
+</html>
