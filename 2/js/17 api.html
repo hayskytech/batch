@@ -9,7 +9,14 @@
 </head>
 
 <body>
-	<ol id="topics"></ol>
+	<div class="lhs">
+		<ol id="topics"></ol>
+	</div>
+	<div class="rhs">
+		<div id="statements">
+
+		</div>
+	</div>
 	<script>
 		const newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/topics?category=Structual%20Phrases";
 		const x = new XMLHttpRequest();
@@ -18,13 +25,66 @@
 			topics = ''
 			for (i = 0; i < data.length; i++) {
 				title = data[i].topic
-				topics += `<li>${title}</li>`
+				id = data[i].id
+				topics += `<li onclick="run(${id})">${title}</li>`
 			}
 			document.getElementById('topics').innerHTML = topics
 		}
 		x.open("GET", newsurl, true);
 		x.send();
+
+		function run(id) {
+			const newsurl = `http://qhaysky.com/school/wp-json/eth_api/v1/statements?topic=${id}&from=English&language=Amharic`;
+			const x = new XMLHttpRequest();
+			x.onload = function () {
+				data = JSON.parse(this.responseText)
+				statements = ''
+				for (i = 0; i < data.length; i++) {
+					l1 = data[i].English
+					l2 = data[i].Amharic
+					id = data[i].id
+					statements += `<p>${l1}</p>`
+					statements += `<p>${l2}</p><hr>`
+				}
+				document.getElementById('statements').innerHTML = statements
+			}
+			x.open("GET", newsurl, true);
+			x.send();
+		}
+		run(1)
 	</script>
+
+	<style>
+		li {
+			font-size: 20px;
+			margin: 15px;
+			background: #ffe4b2;
+			padding: 8px;
+		}
+
+		li:hover {
+			color: blue;
+			cursor: pointer;
+			background-color: orange;
+		}
+
+		ol {
+			list-style-position: inside;
+			padding: 0;
+		}
+
+		.lhs {
+			display: inline-block;
+			float: left;
+			width: 50%;
+		}
+
+		.rhs {
+			display: inline-block;
+			float: right;
+			width: 50%;
+		}
+	</style>
 </body>
 
 </html>
