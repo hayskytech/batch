@@ -9,6 +9,19 @@
 </head>
 
 <body>
+	<div>
+		<table id="lang_table">
+			<tr>
+				<th>
+					<select name="from" id="from"></select>
+				</th>
+				<th>
+					<select name="language" id="language"></select>
+					<button onclick="run(1)">Submit</button>
+				</th>
+			</tr>
+		</table>
+	</div>
 	<div class="lhs">
 		<ol id="topics"></ol>
 	</div>
@@ -18,8 +31,24 @@
 		</div>
 	</div>
 	<script>
-		const newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/topics?category=Structual%20Phrases";
-		const x = new XMLHttpRequest();
+		var newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/languages";
+		x = new XMLHttpRequest();
+		x.onload = function () {
+			data = JSON.parse(this.responseText)
+			languages = ''
+			for (i = 0; i < data.length; i++) {
+				title = data[i]
+				languages += `<option>${title}</option>`
+			}
+			document.getElementById('from').innerHTML = languages
+			document.getElementById('language').innerHTML = languages
+		}
+		x.open("GET", newsurl, true);
+		x.send();
+
+
+		newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/topics?category=Structual%20Phrases";
+		x = new XMLHttpRequest();
 		x.onload = function () {
 			data = JSON.parse(this.responseText)
 			topics = ''
@@ -33,28 +62,48 @@
 		x.open("GET", newsurl, true);
 		x.send();
 
+		from = 'English'
+		language = 'Amharic'
 		function run(id) {
-			const newsurl = `http://qhaysky.com/school/wp-json/eth_api/v1/statements?topic=${id}&from=English&language=Amharic`;
-			const x = new XMLHttpRequest();
+			from = document.getElementById('from').value;
+			language = document.getElementById('language').value;
+			newsurl = `http://qhaysky.com/school/wp-json/eth_api/v1/statements?topic=${id}&from=${from}&language=${language}`;
+
+			console.log(newsurl)
+
+			x = new XMLHttpRequest();
 			x.onload = function () {
 				data = JSON.parse(this.responseText)
 				statements = ''
 				for (i = 0; i < data.length; i++) {
-					l1 = data[i].English
-					l2 = data[i].Amharic
-					id = data[i].id
-					statements += `<p>${l1}</p>`
-					statements += `<p>${l2}</p><hr>`
+					obj = data[i]
+					Object.keys(obj).forEach(key => {
+						if (obj[key]) {
+							statements += `<p>${obj[key]}</p>`
+						} else {
+							statements += `<p>--</p>`
+						}
+					});
+					statements += `<hr>`
 				}
 				document.getElementById('statements').innerHTML = statements
 			}
 			x.open("GET", newsurl, true);
 			x.send();
 		}
-		run(1)
+		// run(1)
 	</script>
 
 	<style>
+		#lang_table select,
+		button {
+			font-size: 20px;
+		}
+
+		#lang_table {
+			width: 100%;
+		}
+
 		li {
 			font-size: 20px;
 			margin: 15px;
