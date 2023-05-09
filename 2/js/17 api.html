@@ -31,7 +31,8 @@
 		</div>
 	</div>
 	<script>
-		var newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/languages";
+		const web = "http://qhaysky.com/ethiolanguagebox/"
+		var newsurl = web + "wp-json/eth_api/v1/languages";
 		x = new XMLHttpRequest();
 		x.onload = function () {
 			data = JSON.parse(this.responseText)
@@ -47,7 +48,7 @@
 		x.send();
 
 
-		newsurl = "http://qhaysky.com/school/wp-json/eth_api/v1/topics?category=Structual%20Phrases";
+		newsurl = web + "wp-json/eth_api/v1/topics?category=Structual%20Phrases";
 		x = new XMLHttpRequest();
 		x.onload = function () {
 			data = JSON.parse(this.responseText)
@@ -67,10 +68,7 @@
 		function run(id) {
 			from = document.getElementById('from').value;
 			language = document.getElementById('language').value;
-			newsurl = `http://qhaysky.com/school/wp-json/eth_api/v1/statements?topic=${id}&from=${from}&language=${language}`;
-
-			console.log(newsurl)
-
+			newsurl = `${web}wp-json/eth_api/v1/statements?topic=${id}&from=${from}&language=${language}`;
 			x = new XMLHttpRequest();
 			x.onload = function () {
 				data = JSON.parse(this.responseText)
