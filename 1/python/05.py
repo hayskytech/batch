@@ -81,4 +81,4 @@ print(fruits)
 # delete list completely
 del fruits
 # print(fruits)
-this will give error
+# this will give error
