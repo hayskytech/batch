@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="file" name="file" id="file" accept=".csv"> <br><br>
+	<input type="button" id="btnsubmit" value="Submit" onclick="readCSVFile();">
+	<br><br>
+	<table id="tblcsvdata" border="1" style="border-collapse: collapse;">
+		<tbody>
+		</tbody>
+	</table>
+	<script>
+		function readCSVFile() {
+			files = document.querySelector('#file').files;
+			if (files.length > 0) {
+				file = files[0];
+				reader = new FileReader();
+				reader.readAsText(file);
+				reader.onload = function (event) {
+					csvdata = event.target.result;
+					rowData = csvdata.split('\n');
+					console.log(rowData)
+					tbodyEl = document.getElementById('tblcsvdata').getElementsByTagName('tbody')[0];
+					tbodyEl.innerHTML = "";
+					// Loop on the row Array (change row=1 if you want to skip 1st row)
+					for (i = 0; i < rowData.length; i++) {
+						// Skip loop if row is empty (last row)
+						if (rowData[i] == '') {
+							continue
+						}
+						// Split by comma (,) to get column Array
+						values = rowData[i].split(',');
+						// Insert a row at the end of table
+						newRow = tbodyEl.insertRow();
+						// Loop on the row column Array
+						for (j = 0; j < values.length; j++) {
+							// Insert a cell at the end of the row
+							newCell = newRow.insertCell();
+							newCell.innerHTML = values[j];
+						}
+					}
+				};
+			} else {
+				alert("Please select a file.");
+			}
+		}
+	</script>
+	<style type="text/css">
+		table th,
+		table td {
+			padding: 5px;
+		}
+
+		tr:first-child td {
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</body>
+</html>
