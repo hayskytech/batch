@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<table id="t1">
+		<caption>SSC Time Table</caption>
+		<tr>
+			<th></th>
+			<th>1</th>
+			<th>2</th>
+			<td class="break" rowspan="7">Break</td>
+			<th>3</th>
+			<th>4</th>
+			<td class="break" rowspan="7">Lunch</td>
+			<th>5</th>
+			<th>6</th>
+			<td class="break" rowspan="7">Break</td>
+			<th>7</th>
+			<th>8</th>
+		</tr>
+		<tr>
+			<th>Mon</th>
+			<td>Telugu</td>
+			<td>Hindi</td>
+			<td>English</td>
+			<td>Maths</td>
+			<td>Science</td>
+			<td>Social</td>
+			<td colspan="2">PET</td>
+		</tr>
+		<tr>
+			<th>Tue</th>
+			<td>Telugu</td>
+			<td>Hindi</td>
+			<td>Science</td>
+			<td>English</td>
+			<td>Maths</td>
+			<td>Social</td>
+			<td>PET</td>
+			<td>Computers</td>
+		</tr>
+		<tr>
+			<th>Wed</th>
+			<td>Telugu</td>
+			<td>English</td>
+			<td>Maths</td>
+			<td>Hindi</td>
+			<td>PET</td>
+			<td>Science</td>
+			<td>Social</td>
+			<td>Computers</td>
+		</tr>
+		<tr>
+			<th>Thur</th>
+			<td>Telugu</td>
+			<td>Science</td>
+			<td>Hindi</td>
+			<td>Maths</td>
+			<td>Social</td>
+			<td>English</td>
+			<td>PET</td>
+			<td>Computers</td>
+		</tr>
+		<tr>
+			<th>Fri</th>
+			<td>Telugu</td>
+			<td>Science</td>
+			<td>English</td>
+			<td>Maths</td>
+			<td>Hindi</td>
+			<td>Social</td>
+			<td>PET</td>
+			<td>Computers</td>
+		</tr>
+		<tr>
+			<th>Sat</th>
+			<td>Telugu</td>
+			<td>Hindi</td>
+			<td>English</td>
+			<td>Maths</td>
+
+			<td colspan="2">Social</td>
+			<td>PET</td>
+			<td>Computers</td>
+		</tr>
+	</table>
+
+	<style>
+		body {
+			background-color: skyblue;
+			padding: 0px;
+			margin: 0;
+		}
+
+		#t1 {
+			width: 90%;
+			margin: 10px;
+		}
+
+		#t1 caption {
+			background-color: darkorange;
+			color: rgb(0, 7, 108);
+			padding: 20px;
+			font-weight: bold;
+			font-size: 26px;
+			border: 1px solid black;
+		}
+
+		#t1,
+		#t1 td,
+		#t1 th {
+			border: 1px solid black;
+			border-collapse: collapse;
+			font-size: 22px;
+			font-family: Arial;
+			text-align: center;
+		}
+
+		#t1 td {
+			padding: 8px;
+			background-color: rgb(192, 255, 192);
+		}
+
+		#t1 th {
+			padding: 15px;
+			color: white;
+			background-color: rgb(0, 10, 147);
+		}
+
+		.break {
+			background-color: rgb(255, 179, 179) !important;
+			font-weight: bold;
+		}
+	</style>
+
+	<style>
+		#hotel {
+			width: 350px;
+			margin: 10px;
+			font-family: Arial;
+		}
+
+		#hotel caption {
+			background-color: darkkhaki;
+			padding: 5px;
+		}
+
+		#hotel tbody {
+			background-color: darkseagreen;
+		}
+
+		#hotel tfoot {
+			background-color: brown;
+		}
+
+		#hotel,
+		#hotel td,
+		#hotel caption {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		#hotel td {
+			padding: 10px;
+		}
+
+		.price {
+			text-align: right;
+		}
+
+		#hotel h1,
+		#hotel p {
+			margin: 5px;
+		}
+	</style>
+
+
+	<table id="hotel">
+		<caption>
+			<h1>Raju Hotel Bill</h1>
+			<p>Address: Lorem ipsum dolor sit amet
+			consectetur adipisicing elit.
+			Praesentium quasi tempore, nobis</p>
+		</caption>
+		<tbody>
+			<tr>
+				<td>1.</td>
+				<td>DOsa</td>
+				<td class="price">30</td>
+			</tr>
+			<tr>
+				<td>2.</td>
+				<td>Idly</td>
+				<td class="price">30</td>
+			</tr>
+			<tr>
+				<td>3.</td>
+				<td>Upma</td>
+				<td class="price">30</td>
+			</tr>
+			<tr>
+				<td>4.</td>
+				<td>Uggani</td>
+				<td class="price">30</td>
+			</tr>
+			<tr>
+				<td>5.</td>
+				<td>Poori</td>
+				<td class="price">30</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="2">Total</th>
+				<td class="price">150</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>
