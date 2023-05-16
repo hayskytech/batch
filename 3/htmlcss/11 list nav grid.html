@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navigation Bar</title>
+</head>
+
+<body>
+	<ul id="nav">
+		<li>Home</li>
+		<li>About</li>
+		<li>Contact</li>
+		<li>Services</li>
+		<li>Products</li>
+	</ul>
+	<style>
+		#nav {
+			list-style-type: none;
+			padding: 5px;
+			border-radius: 10px;
+			border: 1px solid black;
+			background-color: coral;
+			text-align: center;
+		}
+
+		#nav li {
+			display: inline-block;
+			border: 1px solid black;
+			font-size: 22px;
+			padding: 10px;
+			background-color: skyblue;
+			border-radius: 10px;
+			margin: 0 8px 0 8px;
+		}
+
+		#nav li:hover {
+			background-color: darkblue;
+			color: white;
+			cursor: pointer;
+			border-color: red;
+		}
+	</style>
+	<main>
+		<h1>Welcome to our News website</h1>
+		<div class="item">
+			<div class="content">
+				<img src="https://cdn.cdnparenting.com/articles/2018/03/72136312-H.webp" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur dolore aspernatur veritatis. Totam quisquam a optio quae officia sequi necessitatibus, aperiam, placeat doloremque dolore excepturi ad adipisci illo consectetur.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://images.indianexpress.com/2023/05/Dhoni-lap-of-honour.jpg?w=640" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae atque eum aperiam, vel officia minus, adipisci ducimus eveniet, fugiat ullam accusantium pariatur at dolore corporis incidunt earum ut reiciendis? Quidem?</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://www.mykhel.com/img/2023/05/gt-vs-srh-ipl-2023-1684178665.jpg" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, at sunt vitae tempore quod cumque, nobis labore eveniet odio alias minima animi minus veniam consequatur natus! Suscipit obcaecati illo earum earum earum?</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://www.jbcnschool.edu.in/wp-content/uploads/2017/10/benefits-of-sports-for-students.jpg" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos placeat iure, sequi adipisci ipsum omnis doloribus eligendi numquam voluptas veritatis necessitatibus natus quod quas iusto doloremque corporis laborum eaque.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://cdn.cdnparenting.com/articles/2018/03/72136312-H.webp" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur dolore aspernatur veritatis. Totam quisquam a optio quae officia sequi necessitatibus, aperiam, placeat doloremque dolore excepturi ad adipisci illo consectetur.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://images.indianexpress.com/2023/05/Dhoni-lap-of-honour.jpg?w=640" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae atque eum aperiam, vel officia minus, adipisci ducimus eveniet, fugiat ullam accusantium pariatur at dolore corporis incidunt earum ut reiciendis? Quidem?</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://www.mykhel.com/img/2023/05/gt-vs-srh-ipl-2023-1684178665.jpg" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, at sunt vitae tempore quod cumque, nobis labore eveniet odio alias minima animi minus veniam consequatur natus! Suscipit obcaecati illo earum earum earum?</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="content">
+				<img src="https://www.jbcnschool.edu.in/wp-content/uploads/2017/10/benefits-of-sports-for-students.jpg" alt="">
+				<h2>News heading</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos placeat iure, sequi adipisci ipsum omnis doloribus eligendi numquam voluptas veritatis necessitatibus natus quod quas iusto doloremque corporis laborum eaque.</p>
+			</div>
+		</div>
+	</main>
+	<style>
+		* {
+			font-family: Arial;
+		}
+
+		.item {
+			display: inline-block;
+			width: 25%;
+			float: left;
+		}
+
+		.content {
+			border: 1px solid;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			background-color: pink;
+		}
+
+		.content img {
+			width: 100%;
+			height: 200px;
+		}
+
+		.content h2,
+		.content p {
+			margin: 5px;
+		}
+
+		.content p {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			/* number of lines to show */
+			line-clamp: 4;
+			-webkit-box-orient: vertical;
+			font-size: 18px;
+		}
+
+		h1 {
+			color: red;
+		}
+
+		h1:hover {
+			color: blue;
+		}
+	</style>
+</body>
+</html>
