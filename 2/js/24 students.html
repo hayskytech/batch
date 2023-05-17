@@ -13,11 +13,11 @@
 		<table>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="full_name"></td>
+				<td><input type="text" name="full_name" onkeypress="handleKey(event)"></td>
 			</tr>
 			<tr>
 				<td>Phone</td>
-				<td><input type="text" name="phone"></td>
+				<td><input type="text" name="phone" onkeypress="handleKey(event)"></td>
 			</tr>
 			<tr>
 				<td>Gender</td>
@@ -34,6 +34,7 @@
 			</tr>
 		</table>
 	</form>
+	<button onclick="delAll()">Delete All</button>
 	<table id="students_list"></table>
 	<script>
 		str = localStorage.getItem("stu")
@@ -43,12 +44,19 @@
 			students_arr = JSON.parse(str)
 			load_students()
 		}
-
+		function handleKey(event) {
+			if (event.key == "Enter") {
+				add_student()
+			}
+		}
 		function add_student() {
 			form = document.getElementById("student_form");
 			a = form.elements.namedItem("full_name");
 			b = form.elements.namedItem("phone");
 			c = form.elements.namedItem("gender");
+			if (a.value=='' || b.value=='') {
+				return
+			}
 			x = {
 				"full_name": a.value,
 				"phone": b.value,
@@ -68,11 +76,25 @@
 				tr.innerHTML = `<td>${students_arr[i].full_name}</td>`;
 				tr.innerHTML += `<td>${students_arr[i].phone}</td>`;
 				tr.innerHTML += `<td>${students_arr[i].gender}</td>`;
+				tr.innerHTML += `<td><button onclick="del(${i})">Delete</button></td>`;
 				table.appendChild(tr);
 			}
 		}
-
-
+		function delAll() {
+			if (confirm("Delete all students?")) {
+				students_arr = []
+				localStorage.setItem("stu", JSON.stringify(students_arr))
+				load_students();
+			}
+		}
+		function del(i) {
+			sname = students_arr[i].full_name
+			if (confirm(`Delete ${sname}?`)) {
+				students_arr.splice(i, 1)
+				localStorage.setItem("stu", JSON.stringify(students_arr))
+				load_students();
+			}
+		}
 	</script>
 	<style>
 		#students_list,
