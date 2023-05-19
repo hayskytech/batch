@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Attributes</title>
+</head>
+
+<body>
+	<form action="" id="login_form" novalidate>
+		FName: <input type="text" name="fname" required autofocus>
+		<br><br>
+		LName <input type="text" name="lname" placeholder="Enter name...">
+		<br><br>
+		Friend <input type="text" name="friend" value="Harish">
+		<br><br>
+		Country <input type="text" name="country" value="India" readonly>
+		<br><br>
+		Planet <input type="text" name="planet" value="Earth" disabled>
+		<br><br>
+		Town <input type="text" name="town" size="40">
+		<br><br>
+		District <input type="text" name="district" maxlength="10" minlength="5" autocomplete="off">
+		<br><br>
+		<br><br>
+		<button>Submit</button>
+	</form>
+	
+	
+	Favouite color: <input type="color" name="color" form="login_form">
+	
+
+</body>
+</html>
