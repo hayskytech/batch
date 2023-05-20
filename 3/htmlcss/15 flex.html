@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Flex</title>
+</head>
+
+<body>
+	<header>
+		<div class="menu">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
+			<a href="#">Services</a>
+			<a href="#">Products</a>
+			<a href="12 forms 1.html">Forms 1</a>
+			<a href="13 forms 2.html">Forms 2</a>
+			<a href="https://www.google.com/">Google</a>
+		</div>
+	</header>
+	<style>
+		.news {
+			display: flex;
+			background-color: pink;
+		}
+
+		.news div {
+			padding: 10px;
+			margin: 10px;
+			background-color: aquamarine;
+		}
+
+		.menu {
+			display: flex;
+			flex-direction: row;
+			/* column | row-reverse | column-reverse */
+			flex-wrap: nowrap;
+			/* wrap |	wrap-reverse */
+
+			/* horizontal alignment */
+			justify-content: center;
+			/* flex-start | flex-end | space-around | space-between */
+
+			/* vertical alignment */
+			align-items: stretch;
+			/* flex-start | flex-end | base-line | center */
+			align-content: center;
+			/* flex-start | flex-end | base-line | space-between | space-around */
+
+			background-color: blanchedalmond;
+			padding: 10px;
+			height: 200px;
+		}
+
+		.menu a {
+			padding: 10px 20px;
+			font-size: 22px;
+			font-family: Arial;
+			text-decoration: none;
+			color: darkblue;
+			border-radius: 10px;
+			margin: 10px;
+			background-color: skyblue;
+			border: 1px solid black;
+		}
+	</style>
+	<div class="news">
+		<div>
+			<h2>News Title</h2>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, tempore unde magni quisquam cumque pariatur quasi natus porro repudiandae molestias ab aspernatur non laborum dolorum dolores delectus illum recusandae alias!</p>
+		</div>
+		<div>
+			<h2>News Title</h2>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, tempore unde magni quisquam cumque pariatur quasi natus porro repudiandae molestias ab aspernatur non laborum dolorum dolores delectus illum recusandae alias!</p>
+		</div>
+		<div>
+			<h2>News Title</h2>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, tempore unde magni quisquam cumque pariatur quasi natus porro repudiandae molestias ab aspernatur non laborum dolorum dolores delectus illum recusandae alias!</p>
+		</div>
+		<div>
+			<h2>News Title</h2>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, tempore unde magni quisquam cumque pariatur quasi natus porro repudiandae molestias ab aspernatur non laborum dolorum dolores delectus illum recusandae alias!</p>
+		</div>
+	</div>
+</body>
+</html>
