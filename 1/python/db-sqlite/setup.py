@@ -2,8 +2,8 @@ import sqlite3
 con = sqlite3.connect("new.db")
 cur = con.cursor()
 
-cur.execute("CREATE TABLE student (name, phone, father)")
-cur.execute("CREATE TABLE book(title, year, price)")
+# cur.execute("CREATE TABLE student (name, phone, father)")
+# cur.execute("CREATE TABLE book(title, year, price)")
 
 # get all table names
 res = cur.execute("SELECT name FROM sqlite_master")
