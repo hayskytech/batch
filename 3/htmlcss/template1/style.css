@@ -1,0 +1,21 @@
+nav ul{
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	background-color: pink;
+}
+nav li{
+	padding: 10px;
+	margin: 5px;
+	background-color: aquamarine;
+}
+nav a{
+	text-decoration: none;
+	font-size: 22px;
+}
+nav li:hover{
+	background-color: rgb(119, 176, 255);
+}
+p{
+	font-size: 25px;
+}
