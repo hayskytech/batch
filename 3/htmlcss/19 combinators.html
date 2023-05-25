@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Combinators</title>
+</head>
+
+<body>
+	<div class="main">
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ipsam.</p>
+		<div class="city">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+		</div>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ipsam.</p>
+	</div>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, iusto.</p>
+
+	<style>
+		/* Direct children only */
+		.main>p {
+			background-color: orange;
+		}
+
+		/* Descendants all */
+		.city p {
+			background-color: skyblue;
+		}
+
+		/* Adjacent sibling */
+		b+i {
+			background-color: darkgreen;
+		}
+
+		/* General Siblings */
+		span~ins {
+			background-color: blue;
+			color: aliceblue;
+		}
+	</style>
+
+	<b>kkasdsd</b>
+	<!-- <ins>ashbdjad</ins> -->
+	<i>sahsajdsadh</i>
+	<i>sahsajdsadh</i>
+
+	<b>hello</b>
+	<i>hello</i>
+	<i>hello</i>
+	<i>hello</i>
+	<i>hello</i>
+
+	<span>sadbhsa</span>
+	<ins>sskad as</ins>
+	<b>iaysgiadsk</b>
+	<ins>sskad as</ins>
+	<ins>sskad as</ins>
+</body>
+</html>
