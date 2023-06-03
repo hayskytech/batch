@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops</title>
+</head>
+
+<body>
+
+	<script>
+		for (   i = 1; i <= 10; i++   ) {
+			document.write(i + ") hello<br>")
+		}
+
+		x = 1;
+		while (x <= 10) {
+			document.write(x + "- hai<br>")
+			x++;
+		}
+		
+		for (a = 10; a >= 1; a--) {
+			document.write(a + " apple<br>")
+			if (a==7) {
+				break;
+			}
+		}
+
+		for (b = 1; b < 10; b++) {
+			if (b==7) {
+				continue;
+			}
+			document.write(b + " bat<br>")
+		}
+
+
+	</script>
+
+
+<script>
+	// make n = 0 to print even numbers
+	
+	for (n = 1; n <= 20; n++) {
+		document.write(n + ' ')
+		n++
+	}
+</script>
+
+
+</body>
+</html>

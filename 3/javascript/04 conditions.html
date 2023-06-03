@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		amount = prompt("amount:")
+
+		if (amount >= 200) {
+			console.log("Lunch");
+		} else if (amount >= 100) {
+			console.log("Snacks");
+		} else if (amount >= 50) {
+			console.log("Biscuits");
+		} else {
+			console.log("Nothing");
+		}
+
+		color = prompt("enter color:")
+		switch (color) {
+			case "red":
+				console.log("stop");
+				break;
+			case "orange":
+				console.log("ready to go");
+				break;
+			case "green":
+				console.log("go");
+				break;
+
+			default:
+				console.log("Invalid choice");
+				break;
+		}
+	</script>
+</body>
+</html>
