@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Functions</title>
+</head>
+
+<body>
+	<script>
+		function run() {
+			console.log("Hai");
+		}
+		run()
+		run()
+
+		function addition(a, b) {
+			console.log(a + b);
+		}
+
+		function multiply(x = 1, y = 1, z = 1) {
+			console.log(x * y * z);
+		}
+
+		multiply(2, 3, 2)
+		multiply(20, 5)
+		multiply(20)
+		multiply()
+
+		function sum(a, b) {
+			return a + b
+		}
+		x = sum(3, 9)
+		y = sum(25, 35)
+
+	</script>
+
+	<h1 onclick="run2()">Click here to alert</h1>
+	<button onclick="run2()">Alert</button>
+	<button onclick="run3()">Console</button>
+	<input type="number" onchange="run2()">
+
+	<script>
+		function run2() {
+			alert("Hello world")
+		}
+		function run3() {
+			console.log("Hello world")
+		}
+	</script>
+
+	<button onclick="run10()">Show dialog</button>
+	<dialog id="welcome">
+		<h3>User created...</h3>
+		<p>Lorem ipsum dolor.</p>
+		<button onclick="run11()">Close</button>
+	</dialog>
+
+	<script>
+		d = document.getElementById("welcome")
+		function run10(){
+			d.showModal()
+		}
+		function run11() {
+			d.close()
+		}
+	</script>
+
+</body>
+</html>
