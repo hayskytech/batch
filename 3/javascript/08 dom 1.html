@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+</head>
+
+<body>
+	<button onclick="run()">Add Text</button>
+	<button onclick="run2()">Change Color</button>
+	<h1 id="demo"></h1>
+
+	<script>
+		x = document.getElementById("demo");
+		console.log(x);
+		function run() {
+			x.innerText = "hai"
+		}
+		function run2() {
+			x.style.color = "red"
+			x.style.backgroundColor = "skyblue"
+		}
+	</script>
+
+	A: <input type="number" id="a" onchange="addition()" value="1"> 
+	<br><br>
+	B: <input type="number" id="b" onchange="addition()" value="1"> 
+	<br><br>
+	<button onclick="addition()">Add</button>
+	<h2 id="result">--</h2>
+
+
+	<script>
+		function addition() {
+			a = document.getElementById("a").value
+			b = document.getElementById("b").value
+			c = parseInt(a) * parseInt(b)
+			document.getElementById("result").innerText = c
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p class="new">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="new">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="new">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="new">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="new">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="city">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="city">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="city">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+	<p class="city">dolor, sit amet consectetur adipisicing elit. Voluptas, sit.</p>
+
+	<script>
+		// document.getElementsByClassName('new')[0].style.color = "blue";
+		// document.getElementsByTagName('p')[0].style.color = "blue";
+
+		x = document.getElementsByClassName('new')
+		y = document.getElementsByClassName('city')
+		console.log(x);
+		for (i = 0; i < x.length; i++) {
+			x[i].style.color = "green"
+		}
+		for (i = 0; i < y.length; i++) {
+			y[i].style.color = "brown"
+			y[i].style.backgroundColor = "grey"
+		}
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>
