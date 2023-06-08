@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM 3</title>
+</head>
+
+<body>
+	<h1 class="city">Hello</h1>
+	<h2 class="city">Hai</h2>
+	<p class="city">Lorem ipsum dolor sit amet.</p>
+
+	<script>
+		document.querySelector("p.city").innerHTML = "<b>hai</b> daksy d  <i>asvdy</i>"
+		// document.querySelector("p.city").innerText = "<b>hai</b> daksy d  <i>asvdy</i>"
+	</script>
+
+	<hr>
+
+	<button onclick="darkMode()">Dark Mode</button>
+	<button onclick="lightMode()">Light Mode</button>
+
+	<script>
+		function darkMode() {
+			document.body.style.color = '#ffffff';
+			document.body.style.backgroundColor = '#000000';
+		}
+		function lightMode() {
+			document.body.style.color = 'black';
+			document.body.style.backgroundColor = 'white';
+		}
+	</script>
+
+	<hr>
+
+	<p>Body Color: <input type="color" id="apple" onchange="changebody()" value="#ffffff">
+	Text Color: <input type="color" id="bat" onchange="changebody()"></p>
+
+	<script>
+		function changebody() {
+			x = document.getElementById("apple").value
+			y = document.getElementById("bat").value
+			document.body.style.backgroundColor = x
+			document.body.style.color = y
+		}
+	</script>
+	<hr>
+
+	<p><button onclick="run()">Click me</button></p>
+
+	<p><img
+		src="https://th-thumbnailer.cdn-si-edu.com/CbddkFFO3OB80rRz83Iiuf-Z0FY=/1000x750/filters:no_upscale():focal(1471x1061:1472x1062)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/b6/30/b630b48b-7344-4661-9264-186b70531bdc/istock-478831658.jpg"></p>
+
+	<script>
+		function run() {
+			a = document.querySelector('img')
+			a.style.width = "300px"
+			a.style.height = "250px"
+			a.src = "https://upload.wikimedia.org/wikipedia/commons/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg"
+		}
+	</script>
+
+</body>
+</html>
