@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TodoList</title>
+</head>
+
+<body>
+	<h2>Todo List</h2>
+	<input type="text" id="item" onkeypress="run()" autofocus>
+	<button onclick="addItem()">ADD ITEM</button>
+	<button onclick="deleteAll()">Delete All</button>
+	<ul id="list"></ul>
+
+
+	<script>
+		function addItem() {
+			item = document.getElementById("item")
+			list = document.getElementById("list")
+			if (item.value == '') {
+				return
+			}
+			li = document.createElement("li")
+			li.innerHTML = item.value + "<button onclick='delItem(this)'>x</button>"
+			list.appendChild(li)
+			item.value = ''
+			item.focus()
+		}
+		function run() {
+			if (event.key == 'Enter') {
+				addItem()
+			}
+		}
+		function delItem(btn) {
+			btn.parentElement.remove()
+		}
+		function deleteAll() {
+			if (confirm("Delete all items ??")) {
+				list = document.getElementById("list")
+				list.innerHTML = ''
+			}
+		}
+	</script>
+
+	<style>
+		#list {
+			max-width: 300px;
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#list li {
+			height: 25px;
+			background-color: pink;
+			padding: 5px;
+			margin: 5px;
+			border: 1px solid;
+			border-radius: 5px;
+		}
+
+		#list button {
+			float: right;
+		}
+	</style>
+
+</body>
+</html>
