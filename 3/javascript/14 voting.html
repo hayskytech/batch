@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p>Enter your age to check voting eligblity</p>
+	<input type="number" id="age" value="15">
+	<button id="btn">Check</button>
+	<h2 id="result">Not Eligible for voting.</h2>
+	
+	<script type="text/javascript">
+		document.getElementById("age").addEventListener("change",voting)
+		document.getElementById("btn").addEventListener("click",voting)
+		function voting() {
+			age = document.getElementById('age').value;
+			if (age >= 18) {
+				result = 'Eligible for voting.';
+			} else {
+				result = 'Not Eligible for voting.';
+			}
+			document.getElementById('result').innerHTML = result
+		}
+		voting()
+	</script>
+</body>
+</html>

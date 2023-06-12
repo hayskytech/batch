@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Listener</title>
+</head>
+
+<body>
+
+	<button id="demo">Alert</button>
+	<button id="activate" onclick="activate()">Activate</button>
+	<button id="deactivate" onclick="deactivate()">DeActivate</button>
+
+	<script>
+		btn = document.getElementById("demo")
+		function activate() {
+			btn.addEventListener("click", run)
+			btn.style.backgroundColor = "pink"
+		}
+
+		function deactivate() {
+			btn.removeEventListener('click', run)
+			btn.style.backgroundColor = "buttonface"
+		}
+
+		function run() {
+			alert("hai");
+		}
+	</script>
+
+	<button id="btn2">NEw button</button>
+	<script>
+		btn2 = document.getElementById("btn2")
+		btn2.addEventListener("click", function () {
+			alert("this is new button")
+		});
+	</script>
+
+</body>
+</html>

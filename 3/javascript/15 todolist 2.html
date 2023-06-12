@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text" id="item">
+	<button id="btn">Add</button>
+	<ol id="list"></ol>
+
+	<script>
+		// localStorage.setItem("name", 'New')
+		x = localStorage.getItem("name")
+		console.log(x);
+
+
+		// arr = ["apple", "bat", "cat"]
+		// localStorage.setItem('notes',JSON.stringify(arr))
+		notes = localStorage.getItem("notes")
+		console.log(notes);
+
+
+
+
+
+		btn = document.getElementById("btn")
+		btn.addEventListener('click', addItem)
+		function addItem() {
+			item = document.getElementById("item");
+			if (item.value == '') {
+				return
+			}
+			list = document.getElementById("list")
+			li = document.createElement('li')
+			li.innerHTML = item.value
+			list.appendChild(li)
+			item.value = ''
+			item.focus()
+		}
+	</script>
+</body>
+</html>
