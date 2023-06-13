@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text" id="item">
+	<button onclick="addItem()">Add</button>
+	<button onclick="delAll()">Delete All</button>
+	<ol id="list"></ol>
+
+	<script>
+		arr = localStorage.getItem("notes")
+		if (arr === null) {
+			arr = []
+		} else {
+			arr = JSON.parse(arr)
+		}
+		// console.log(arr);
+
+		item = document.getElementById("item");
+		list = document.getElementById("list")
+		loadItems()
+
+		function addItem() {
+			if (item.value == '') {
+				return
+			}
+			arr.push(item.value)
+			saveToLocal()
+			item.value = ''
+			item.focus()
+			loadItems()
+		}
+		function loadItems() {
+			list.innerHTML = ''
+			for (i = 0; i < arr.length; i++) {
+				li = document.createElement('li')
+				li.innerHTML = arr[i] + `<button onclick="del(${i})">x</button>`
+				list.appendChild(li)
+			}
+		}
+
+		function del(i) {
+			if (confirm("Delete this item?")) {
+				arr.splice(i, 1)
+				loadItems()
+				saveToLocal()
+			}
+		}
+
+		function delAll() {
+			if (confirm("Delete All?")) {
+				list.innerHTML = ''
+				arr = []
+				saveToLocal()
+			}
+		}
+
+		function saveToLocal() {
+			localStorage.setItem("notes", JSON.stringify(arr))
+		}
+	</script>
+</body>
+</html>
