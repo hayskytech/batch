@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AJAX</title>
+</head>
+
+<body>
+	<script>
+		url = 'https://www.telugu360.com/wp-json/wp/v2/posts?per_page=5'
+
+		x = new XMLHttpRequest();
+		x.onload = function () {
+			raw = this.responseText
+			data = JSON.parse(raw)
+
+			for (let i = 0; i < data.length; i++) {
+				src = data[i].jetpack_featured_media_url;
+				title = data[i].title.rendered
+
+				div = document.createElement('div')
+				div.innerHTML = `<h2>${title}</h2>
+												<img src="${src}">`
+				document.body.appendChild(div)
+			}
+		}
+		x.open("GET", url, true);
+		x.send();
+
+	</script>
+
+	<style>
+		div{
+			display: inline-block;
+			width: 300px;
+			background-color: skyblue;
+			float: left;
+			padding: 20px;
+			margin: 10px;
+		}
+		div img{
+			width: 100%;
+		}
+	</style>
+
+</body>
+</html>
