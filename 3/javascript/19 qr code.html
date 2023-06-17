@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+
+
+	<input type="text" id="text" onkeypress="handleKey(event)" value="https://google.com">
+	<button onclick="run()">Generate QR Code</button>
+	<div id="qrcode" style="margin-top: 10px;"></div>
+
+	<script>
+
+		x = new QRCode(document.getElementById("qrcode"), {
+			width: 200,
+			height: 200
+		});
+		inp = document.getElementById('text')
+		function run() {
+			x.makeCode(inp.value)
+		}
+		function handleKey(event) {
+			if (event.key == "Enter") {
+				run()
+			}
+		}
+		run()
+	</script>
+
+</body>
+</html>
