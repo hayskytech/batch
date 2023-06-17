@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Students</title>
+</head>
+
+<body>
+	<table>
+		<form method="post" onsubmit="add_student(event)">
+			<tr>
+				<td><label for="student">Student:</label></td>
+				<td><input type="text" id="student" name="student" required></td>
+			</tr>
+			<tr>
+				<td><label for="phone">Phone:</label></td>
+				<td><input type="tel" id="phone" name="phone" required></td>
+			</tr>
+			<tr>
+				<td><label for="gender">Gender:</label></td>
+				<td>
+					<select id="gender" name="gender" required>
+						<option value="" disabled selected>Select gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="Submit" onclick="add_student(event)">
+				</td>
+			</tr>
+		</form>
+	</table>
+	<h2>Students List</h2>
+	<table id="stu"></table>
+
+	<script>
+		str = localStorage.getItem("stu")
+		if (str == null) {
+			students_arr = []
+		} else {
+			students_arr = JSON.parse(str)
+			console.log(str);
+			load_students()
+		}
+		function add_student(event) {
+			event.preventDefault();
+			student = document.getElementById("student")
+			phone = document.getElementById("phone")
+			gender = document.getElementById("gender")
+
+			obj = {
+				"student": student.value,
+				"phone": phone.value,
+				"gender": gender.value
+			}
+			students_arr.push(obj)
+			localStorage.setItem('stu', JSON.stringify(students_arr))
+			load_students()
+		}
+		function load_students() {
+			table = document.getElementById("stu");
+			table.innerHTML = ''
+			for (let i = 0; i < students_arr.length; i++) {
+				tr = document.createElement('tr')
+				tr.innerHTML = `<td>${students_arr[i].student}</td>
+				<td>${students_arr[i].phone}</td>
+				<td>${students_arr[i].gender}</td>
+				<td><button onclick="del(${i})">Delete</button></td>`
+				table.appendChild(tr)
+			}
+		}
+		function del(i) {
+			students_arr.splice(i, 1)
+			localStorage.setItem('stu', JSON.stringify(students_arr))
+			load_students()
+		}
+	</script>
+</body>
+</html>
