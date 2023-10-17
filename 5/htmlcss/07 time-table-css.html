@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table id="t1">
+    <caption>SSC Time Table</caption>
+    <tbody>
+      <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <td class="break" rowspan="7">Break</td>
+        <th>3</th>
+        <th>4</th>
+        <td class="break" rowspan="7">Lunch</td>
+        <th>5</th>
+        <th>6</th>
+        <td class="break" rowspan="7">Break</td>
+        <th>7</th>
+        <th>8</th>
+      </tr>
+      <tr>
+        <th>Mon</th>
+        <td>Telugu</td>
+        <td>Hindi</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td>Science</td>
+        <td>Social</td>
+        <td colspan="2">PET</td>
+      </tr>
+      <tr>
+        <th>Tue</th>
+        <td>Telugu</td>
+        <td>Hindi</td>
+        <td>Science</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td>Social</td>
+        <td>PET</td>
+        <td>Computers</td>
+      </tr>
+      <tr>
+        <th>Wed</th>
+        <td>Telugu</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td>Hindi</td>
+        <td>PET</td>
+        <td>Science</td>
+        <td>Social</td>
+        <td>Computers</td>
+      </tr>
+      <tr>
+        <th>Thur</th>
+        <td>Telugu</td>
+        <td>Science</td>
+        <td>Hindi</td>
+        <td>Maths</td>
+        <td>Social</td>
+        <td>English</td>
+        <td>PET</td>
+        <td>Computers</td>
+      </tr>
+      <tr>
+        <th>Fri</th>
+        <td>Telugu</td>
+        <td>Science</td>
+        <td>English</td>
+        <td>Maths</td>
+        <td>Hindi</td>
+        <td>Social</td>
+        <td>PET</td>
+        <td>Computers</td>
+      </tr>
+      <tr>
+        <th>Sat</th>
+        <td>Telugu</td>
+        <td>Hindi</td>
+        <td>English</td>
+        <td>Maths</td>
+
+        <td colspan="2">Social</td>
+        <td>PET</td>
+        <td>Computers</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <style>
+    body {
+      background-color: skyblue;
+      padding: 0px;
+      margin: 0;
+    }
+
+    #t1 {
+      width: 90%;
+      margin: 10px;
+    }
+
+    #t1 caption {
+      background-color: darkorange;
+      color: rgb(0, 7, 108);
+      padding: 20px;
+      font-weight: bold;
+      font-size: 26px;
+      border: 1px solid black;
+    }
+
+    #t1,
+    #t1 td,
+    #t1 th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      font-size: 20px;
+      font-family: Arial;
+      text-align: center;
+      color: black;
+    }
+
+    #t1 td {
+      padding: 8px;
+      background-color: rgb(87, 255, 87);
+    }
+
+    #t1 th {
+      padding: 15px;
+      color: white;
+      background-color: rgb(0, 10, 147);
+    }
+
+    .break {
+      background-color: rgb(255, 179, 179) !important;
+      font-weight: bold;
+    }
+  </style>
+
+</body>
+</html>

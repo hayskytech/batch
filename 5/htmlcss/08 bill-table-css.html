@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table id="hotel">
+    <caption>
+      <h1>Raju Hotel Bill</h1>
+      <p>Address: Lorem ipsum dolor sit amet
+      consectetur adipisicing elit.
+      Praesentium quasi tempore, nobis</p>
+    </caption>
+    <tbody>
+      <tr>
+        <td>1.</td>
+        <td>DOsa</td>
+        <td class="price">30</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Idly</td>
+        <td class="price">30</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Upma</td>
+        <td class="price">30</td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td>Uggani</td>
+        <td class="price">30</td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td>Poori</td>
+        <td class="price">30</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Total</th>
+        <td class="price">150</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <style>
+    #hotel {
+      width: 350px;
+      margin: 10px;
+      font-family: Arial;
+    }
+
+    #hotel caption {
+      background-color: darkkhaki;
+      padding: 5px;
+    }
+
+    #hotel tbody {
+      background-color: darkseagreen;
+    }
+
+    #hotel tfoot {
+      background-color: brown;
+    }
+
+    #hotel,
+    #hotel td,
+    #hotel caption {
+      border: 1px solid black;
+      border-collapse: collapse;
+      color: black;
+    }
+
+    #hotel td {
+      padding: 10px;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    #hotel h1,
+    #hotel p {
+      margin: 5px;
+    }
+
+    #hotel h1 {
+      font-size: 22px;
+    }
+  </style>
+
+</body>
+</html>
