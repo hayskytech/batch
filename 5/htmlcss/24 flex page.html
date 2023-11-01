@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <div class="menu">
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Contact</a>
+      <a href="">Services</a>
+    </div>
+  </div>
+  <div class="flex1">
+    <!-- <div>3</div> -->
+    <div class="main">
+      <h1>Main New</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, veritatis. Quis perspiciatis, possimus reiciendis, qui minus ad ipsum rerum dicta praesentium neque, fugiat quia odio iusto repellat ea laborum veniam.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, veritatis. Quis perspiciatis, possimus reiciendis, qui minus ad ipsum rerum dicta praesentium neque, fugiat quia odio iusto repellat ea laborum veniam.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, veritatis. Quis perspiciatis, possimus reiciendis, qui minus ad ipsum rerum dicta praesentium neque, fugiat quia odio iusto repellat ea laborum veniam.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, veritatis. Quis perspiciatis, possimus reiciendis, qui minus ad ipsum rerum dicta praesentium neque, fugiat quia odio iusto repellat ea laborum veniam.</p>
+    </div>
+    <div class="aside">
+      <h1>Sidebar</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio amet, rem inventore sunt sequi obcaecati, repellendus dolorum esse, blanditiis eius error facere eum quae minus vitae deleniti alias quidem odio?</p>
+    </div>
+    <!-- <div>4</div> -->
+  </div>
+  <footer>
+    <p>Copyrights All rights reserved</p>
+  </footer>
+  <style>
+    .menu {
+      display: flex;
+      background-color: skyblue;
+    }
+
+    .menu>a {
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid beige;
+      background-color: hotpink;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .flex1 {
+      display: flex;
+      background-color: pink;
+      justify-content: center;
+    }
+
+    .flex1>div {
+      font-size: 18px;
+      background-color: skyblue;
+      padding: 15px;
+      margin: 15px;
+    }
+
+    .aside {
+      flex: 1 1 30%
+    }
+
+    .main {
+      flex: 1 1 70%
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 10px 20px;
+      background-color: wheat;
+    }
+  </style>
+</body>
+</html>
