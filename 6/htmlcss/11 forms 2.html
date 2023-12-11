@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form in Table</title>
+</head>
+
+<body>
+  <form id="register" method="post" enctype="multipart/form-data">
+    <table border="1">
+      <caption>Regstration Form</caption>
+      <tr>
+        <td>First Name*</td>
+        <td><input type="text" name="fname" required autofocus></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="lname" placeholder="last name"></td>
+      </tr>
+      <tr>
+        <td>Date of Birth</td>
+        <td><input type="date" name="dob"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <select name="gender" id="">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="pwd"></td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td><input type="file" name="adhaar"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit"></td>
+      </tr>
+    </table>
+  </form>
+
+  <hr>
+
+  <form action="" method="get">
+    <fieldset>
+      <legend>Personal Details</legend>
+      <label for="">Name:</label>
+      <input type="text" name="fname" value="Ramseh NDK">
+      <br>
+      <input type=" text" name="lname" placeholder="Enter your name...">
+      <br>
+      Readonly <input type="text" name="animal" value="cat" readonly>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Educational Details</legend>
+      Disabled <input type="text" name="food" value="rice" disabled>
+      <br>
+      Width: <input type="text" size="25">
+      <br>
+      chars: <input type="text" maxlength="10" minlength="5">
+      <br>
+      <input type="number" max="120" min="12" step="12">
+      <input type="number" max="10" min="0" step="0.01">
+      <br>
+      <input type="submit" value="Login">
+    </fieldset>
+  </form>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magni esse molestiae hic illum doloremque dolor?
+    Iusto asperiores aspernatur commodi assumenda ipsam velit incidunt officiis eius accusantium rem. Vero, fugiat!</p>
+
+  <input type="text" name="city" form="register">
+
+  <style>
+    legend {
+      background-color: skyblue;
+    }
+  </style>
+</body>
+
+</html>
