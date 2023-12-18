@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Loops</h1>
+  <script>
+    // document.write("hello")
+    // document.write("hello")
+
+    for (i = 1; i <= 10; i++) {
+      document.write(i + ") hello<br>")
+    }
+    document.write('<br>')
+
+    for (let j = 1; j <= 5; j++) {
+      document.write(`(${j}) hai <br>`)
+    }
+  </script>
+
+  <h2>5 Table</h2>
+  <script>
+    for (i = 10; i >= 1; i--) {
+      document.write(`<br>`)
+      document.write(`5 x ${i} = ${i * 5}`)
+    }
+  </script>
+
+  <h2>Break and Continue</h2>
+  <script>
+    for (let k = 1; k <= 100; k++) {
+      if (k === 20) {
+        break
+      }
+      if (k === 10) {
+        continue
+      }
+      document.write(`<br>${k} value`)
+    }
+  </script>
+
+  <h2>While Loop</h2>
+  <script>
+    n = 2
+    while (n <= 10) {
+      document.write(`${n} <br>`)
+      n++;
+    }
+  </script>
+
+  <h2>Do While Loop</h2>
+  <script>
+    n = 1
+    do {
+      document.write(`${n} <br>`)
+      n++;
+    } while (n <= 10)
+  </script>
+
+  <script>
+    cars = ['Volvo', 296, 'santro', true, 'apple']
+    console.log(cars[0])
+    console.log(cars[1])
+    console.log(cars[2])
+    console.log(cars[3])
+  </script>
+
+  <script>
+    student = {
+      name: 'raju',
+      age: 25,
+      phone: 2313456987,
+      town: 'ndk'
+    }
+    console.log(student);
+    console.log(student.name);
+    console.log(student.age);
+    console.log(student.phone);
+  </script>
+
+
+</body>
+
+</html>
