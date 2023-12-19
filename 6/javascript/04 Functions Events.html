@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions Events</title>
+</head>
+
+<body>
+  <h1>hello world</h1>
+  <button onclick="run()">Click to run</button>
+  <script>
+    function run() {
+      alert('hai')
+    }
+    function showmsg(x) {
+      console.log(x)
+    }
+  </script>
+
+  <h2>MSG</h2>
+  <button onclick="showmsg('hello')">Show msg1</button>
+  <button onclick="showmsg('hai')">Show msg 2</button>
+
+  <h2>Return</h2>
+
+  <script>
+    function addition(x, y) {
+      return (x + y);
+    }
+
+    sum = addition(3, 6)
+
+    console.log('sum', sum);
+  </script>
+
+  <hr>
+
+  <h3>Dialog</h3>
+
+  <button onclick="run1()">Show Dialog</button>
+  <button onclick="run2()">Show Modal</button>
+
+  <dialog id="box">
+    hai hello
+    <button onclick="close1()"> x </button>
+  </dialog>
+
+  <script>
+    box = document.getElementById('box')
+    function run1() {
+      box.show()
+    }
+    function run2() {
+      box.showModal()
+    }
+    function close1() {
+      box.close()
+    }
+  </script>
+
+  <h2>Addition</h2>
+
+  <input type="number" id="a" value="6">
+  <input type="number" id="b" value="2">
+  <button onclick="addthis()">ADD</button>
+  <h2 id="sum">-</h2>
+  <h2 id="diff">-</h2>
+
+  <script>
+    function addthis() {
+      a = document.getElementById('a')
+      b = document.getElementById('b')
+      sum = Number(a.value) + Number(b.value)
+      diff = Number(a.value) - Number(b.value)
+      document.getElementById('sum').innerHTML = sum
+      document.getElementById('diff').innerHTML = diff
+    }
+  </script>
+
+</body>
+
+</html>
