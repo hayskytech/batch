@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Examples</title>
+</head>
+
+<body>
+  <button id="btn1">Click here</button>
+
+  <script>
+    document.getElementById('btn1').onclick = function () {
+      alert('hai')
+    }
+  </script>
+
+  <select name="gender" id="" onchange="run2(this)">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Others</option>
+  </select>
+
+  <script>
+    function run2(x) {
+      alert(`${x.name} is ${x.value}`)
+    }
+  </script>
+
+  <hr>
+
+  Font Size: <input type="number" onchange="changeFont(this)" value="18" min="8" max="50"><br>
+  Color: <input type="color" onchange="changeColor(this)"><br>
+  Background color: <input type="color" onchange="changeBg(this)" value="#ffffff"><br>
+
+  <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et molestiae ex placeat qui distinctio ea nisi
+    repellat nam eligendi aliquam. Eligendi, corporis suscipit ratione iste enim nam neque deleniti voluptatibus.</p>
+
+  <script>
+    function changeFont(inp) {
+      // document.getElementById('para').style.fontSize = inp.value + 'px'
+      document.getElementById('para').style.fontSize = `${inp.value}px`
+    }
+    function changeColor(inp) {
+      document.getElementById('para').style.color = inp.value
+    }
+    function changeBg(inp) {
+      document.getElementById('para').style.backgroundColor = inp.value
+    }
+  </script>
+
+  <hr>
+
+  <button onclick="showApple()">Show</button>
+  <button onclick="hideApple()">Hide</button>
+  <button onclick="toggleApple()">Show / Hide</button>
+
+  <div id="apple">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque expedita natus atque! Voluptates
+    quibusdam quidem vitae ullam sed natus delectus nulla doloribus in libero! Tempora harum quasi numquam obcaecati
+    provident?</div>
+
+  <script>
+    apple = document.getElementById('apple')
+    function showApple() {
+      apple.style.display = 'block'
+    }
+    function hideApple() {
+      apple.style.display = 'none'
+    }
+    function toggleApple() {
+      if (apple.style.display === 'none') {
+        apple.style.display = 'block'
+      } else {
+        apple.style.display = 'none'
+      }
+    }
+  </script>
+
+  <hr>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/components/icon.min.css">
+  <input type="password" id="pass">
+  <i id="eyeicon" class="eye slash icon" onclick="togglePass()"></i>
+
+  <script>
+    function togglePass() {
+      p = document.getElementById('pass')
+      i = document.getElementById('eyeicon')
+      i.classList.toggle('slash')
+      if (p.type === 'password') {
+        p.type = 'text'
+      } else {
+        p.type = 'password'
+      }
+    }
+  </script>
+
+</body>
+
+</html>
