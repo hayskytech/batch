@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="item">apple</div>
+    <div class="item">bat</div>
+    <div class="item">haawfwai</div>
+    <!-- <div class="item">hai</div>
+    <div class="item">haasfasfi</div>
+    <div class="item">hai</div>
+    <div class="item">haawfi</div>
+    <div class="item">haawfawfi</div> -->
+    <div class="item">hai</div>
+    <div class="item">zebra</div>
+  </div>
+  <style>
+    #main {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 5px;
+      flex-wrap: wrap;
+      /* row-gap: 10px;
+      column-gap: 10px; */
+      justify-content: space-between;
+      height: 200px;
+      background-color: skyblue;
+      padding: 5px;
+      align-items: end;
+    }
+
+    .item {
+      padding: 20px;
+      background-color: aquamarine;
+    }
+  </style>
+</body>
+
+</html>
