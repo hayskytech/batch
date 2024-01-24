@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button onclick="run()">click me</button>
+  <script>
+    function run() {
+      console.log('I am Running...')
+    }
+
+    function addition(a = 0, b = 0, c = 0) {
+      s = a + b + c
+      console.log(s);
+    }
+
+    addition(3, 7, 10)
+    addition(5, 5)
+    addition(13)
+    addition()
+
+    function sub(a = 0, b = 0) {
+      s = a - b
+      return s;
+    }
+
+    ans = sub(17, 10)
+
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    x = 25
+    x = 25.5
+    x = -5
+    name = 'raju'
+    name = "raju"
+    eligible = true
+    eligible = false
+
+    items = ['apple', 'bat', "cat", 25, 36, 58, 98]
+    // console.log(items[1]);
+
+    for (x in items) {
+      console.log(x + ' is ' + items[x]);
+    }
+
+    student = {
+      age: 20,
+      name: 'sufyan',
+      town: "ndk"
+    }
+    // console.log(student.age);
+    // console.log(student.town);
+    for (x of items) {
+      console.log(x);
+    }
+    console.log('---------------');
+
+  </script>
+
+  <script>
+    data = [
+      { name: "raj", age: 20, town: "akdb" },
+      { "name": "john", "age": 22, "town": "akdb" },
+      { "name": "appl", "age": 21, "town": "akdb" },
+      { "name": "bat", "age": 25, "town": "akdb" }
+    ]
+    for (student of data) {
+      console.log(student.age);
+    }
+
+    person = {
+      colors: ['red', 'blue', 'green'],
+      cars: ['kajsd', 'asdk', 'askudsada'],
+      fruits: ['kajsd', 'asdk', 'askudsada'],
+      vegs: ['kajsd', 'asdk', 'askudsada']
+    }
+    console.log(person.colors);
+    console.log(person.cars);
+    console.log(person.fruits);
+  </script>
+
+
+  <script>
+    stu = {
+      age: 20,
+      name: 'sufyan',
+      town: "ndk"
+    }
+    arr = Object.entries(stu)
+    console.log(arr);
+  </script>
+</body>
+
+</html>
