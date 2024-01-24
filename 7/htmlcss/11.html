@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>Personal Details</legend>
+      First Name:
+      <input type="text" name="fname">
+      <br> <br>
+      Last Name
+      <input type="text" name="lname">
+      <br> <br>
+      Date of Birth
+      <input type="date" name="dob">
+      <br><br>
+      Color: <input type="color" name="tshirtcolor">
+      <br><br>
+      Gender: <select size="6" name="gender" multiple>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <br>
+      <br>
+      Branch:
+      <input type="radio" name="branch" value="EEE"> EEE
+      <input type="radio" name="branch" value="CSE"> CSE
+      <input type="radio" name="branch" value="ECE"> ECE
+      <input type="radio" name="branch" value="MECH"> MECH
+      <input type="radio" name="branch" value="Civil"> Civil
+      <br><br>
+      Address: <textarea name="address"></textarea>
+      <br><br>
+      <input type="submit" name="" id="">
+    </fieldset>
+
+  </form>
+
+  <hr>
+
+  <form id="studentForm" target="_blank" novalidate>
+    <table>
+      <tr>
+        <td>First Name*</td>
+        <td><input type="text" autofocus required placeholder="enter your name"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" value="Shaik" size="30" minlength="3" maxlength="10"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td><input type="text" name="gender" value="Male" disabled></td>
+      </tr>
+      <tr>
+        <td>Number of cars</td>
+        <td><input type="number" name="count" min="-50" max="100" step="5"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button>Submit</button>
+          <button type="button">Dummy button</button>
+          <input type="reset">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+  <table>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="pwd" form="studentForm"></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
