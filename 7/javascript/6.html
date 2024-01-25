@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="changeTajMahal()">changetoTajMahaal</button>
+  <button onclick="changeRedFort()">changetoRedFort</button>
+  <br>
+  <br>
+  <img src="https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg" alt="" width="250" height="180">
+
+  <script>
+    function changeRedFort() {
+      document.querySelector('img').src = 'https://bsmedia.business-standard.com/_media/bs/img/article/2018-04/27/full/1524814612-1299.jpg'
+    }
+    function changeTajMahal() {
+      document.querySelector('img').src = 'https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg'
+    }
+  </script>
+  <hr>
+
+
+  <style>
+    .city {
+      color: red;
+      text-decoration: underline;
+    }
+
+    .town {
+      color: green;
+      text-decoration: none;
+    }
+  </style>
+
+  <button onclick="changeClass()">change class</button>
+  <h1 class="city" id="mainheading">Helloworld</h1>
+
+  <script>
+    function changeClass() {
+      document.getElementById('mainheading').classList.toggle('town')
+      document.getElementById('mainheading').classList.toggle('city')
+    }
+  </script>
+
+  <input type="password" id="pwd" value="helloworld"> <button onclick="pwd()">O</button>
+  <script>
+    function pwd() {
+      inp = document.getElementById('pwd')
+      if (inp.type === 'text') {
+        inp.type = 'password'
+      } else {
+        inp.type = 'text'
+      }
+    }
+  </script>
+
+</body>
+
+</html>

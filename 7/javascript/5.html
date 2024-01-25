@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="5.js"></script>
+
+  <button onclick="run()">OK</button>
+  <h1 id="one">Hello</h1>
+  askdbasydh
+
+  <script>
+    function run() {
+      x = document.getElementById('one')
+      // console.log(x);
+      x.innerHTML = 'Hai'
+      x.style.color = 'red'
+      x.style.backgroundColor = 'skyblue'
+      x.style.display = 'inline'
+    }
+  </script>
+
+  <h2>apple</h2>
+  <h2>bat</h2>
+  <h2>cat</h2>
+  <h2>cat</h2>
+
+  <script>
+    x = document.getElementsByTagName('h2')
+    // console.log(x);
+    // console.log(x[1]);
+    x[0].style.color = "blue"
+    x[1].style.color = "red"
+    x[2].style.color = "green"
+
+    for (d of x) {
+      d.style.backgroundColor = 'skyblue'
+    }
+  </script>
+
+  <h3 class="city">HYD</h3>
+  <h3 class="city">KNL</h3>
+  <h3 class="town">NDK</h3>
+  <h3 class="town">NDL</h3>
+
+  <script>
+    c = document.getElementsByClassName('city')
+    // console.log(c);
+    c[0].style.fontSize = '30px'
+  </script>
+
+
+
+</body>
+
+</html>

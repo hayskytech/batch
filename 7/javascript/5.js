@@ -1,0 +1,1 @@
+console.log('I am coming from external javascript')
