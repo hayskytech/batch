@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="run(this)"><b>hai</b> Click here</button>
+  <input type="number" value="12" onchange="changeSize(this)">
+  <p id="apple">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos tempore doloremque excepturi sunt,
+    suscipit mollitia minima officiis vitae libero optio. Assumenda maiores veritatis amet ipsum, nihil temporibus
+    inventore. Expedita, modi!</p>
+
+  <script>
+    function run(btn) {
+      // alert('hai')
+      console.log(btn.innerHTML);
+      console.log(btn.innerText);
+    }
+    function changeSize(inp) {
+      // console.log(inp.value);
+      document.querySelector('#apple').style.fontSize = inp.value + 'px'
+    }
+  </script>
+
+
+  <div>
+    <button id="test">OK</button>
+  </div>
+
+  <script>
+    testBtn = document.getElementById('test')
+    testBtn.addEventListener('click', testFun)
+    // testBtn.onclick = testFun
+    function testFun() {
+      console.log('running test');
+    }
+  </script>
+
+  <hr>
+
+  <div>
+    <button id="test2">OK</button>
+  </div>
+
+  <script>
+    testBtn2 = document.getElementById('test2')
+    // testBtn2.addEventListener('click', function () {
+    //   console.log('running test');
+    // })
+    testBtn2.onclick = testFun
+
+  </script>
+
+  <select name="" id="gender" onchange="changeText(this)">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Others</option>
+  </select>
+  <h1 id="ans">Selected option: </h1>
+
+  <script>
+    function changeText(g) {
+      // console.log(g.value);
+      document.getElementById('ans').innerHTML = 'Selected Option: ' + g.value
+    }
+  </script>
+
+</body>
+
+</html>
