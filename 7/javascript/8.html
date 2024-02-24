@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  A: <input type="number" value="0" onchange="add()" id="a">
+  B: <input type="number" value="0" onchange="add()" id="b">
+  <button onclick="add()">ADD</button>
+  <h2 id="result"></h2>
+  <hr>
+  <script>
+    function add() {
+      a = document.getElementById('a').value
+      b = document.getElementById('b').value
+      sum = parseInt(a) + parseInt(b)
+      document.getElementById('result').innerText = sum
+    }
+  </script>
+  Enter a number to get its table:
+  <input type="number" id="inp" value="5" onkeyup="run()" onchange="run()">
+  <button onclick="run()">OK</button>
+  <div id="table"></div>
+
+  <script>
+    function run() {
+      n = document.getElementById('inp').value
+      if (n == '') {
+        n = 1
+      }
+      str = ''
+      for (let i = 1; i <= 10; i++) {
+        str += `${n} x ${i} = ${n * i} <br>`
+      }
+      document.getElementById('table').innerHTML = str
+    }
+    run()
+  </script>
+
+</body>
+
+</html>

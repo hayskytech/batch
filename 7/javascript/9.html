@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  TodoList:
+
+  <hr>
+
+  <form onsubmit="addItem(event)">
+    Item: <input type="text" name="" id="txt" autofocus>
+    <button>ADD</button>
+  </form>
+
+  <ol id="list"></ol>
+
+  <script>
+    list = []
+    function addItem(event) {
+      event.preventDefault()
+      str = ''
+      txt = document.getElementById('txt').value
+      list.push(txt)
+      list.forEach(item => {
+        str += `<li>${item}</li>`
+      });
+      document.getElementById('list').innerHTML = str
+      document.getElementById('txt').value = ''
+      document.getElementById('txt').focus()
+    }
+  </script>
+
+</body>
+
+</html>
