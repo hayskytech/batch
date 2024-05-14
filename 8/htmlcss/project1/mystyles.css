@@ -1,0 +1,57 @@
+* {
+  font-family: Arial;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: antiquewhite;
+  padding: 15px;
+  text-align: center;
+}
+
+header a {
+  padding: 10px;
+  background-color: aquamarine;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+header a:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+main {
+  width: 70%;
+  background-color: burlywood;
+  float: left;
+}
+
+aside {
+  width: 30%;
+  background-color: beige;
+  float: right;
+}
+
+p {
+  padding: 15px;
+}
+
+footer {
+  background-color: chocolate;
+  clear: both;
+}
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.active {
+  background-color: darkblue;
+  color: white;
+}
