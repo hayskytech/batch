@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flex</title>
+</head>
+
+<body>
+  <div id="one">
+    <button>apple</button>
+    <button>bat <br> bats</button>
+    <button>cat <br> dog <br> frog</button>
+    <button>4 page</button>
+    <button>1 page</button>
+    <button>2 page</button>
+    <button>3 page</button>
+    <button>4 page</button>
+    <button>1 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>2 page</button>
+    <button>zebra</button>
+  </div>
+  <style>
+    #one {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: start;
+      flex-wrap: wrap;
+      align-items: flex-end;
+
+      column-gap: 20px;
+      row-gap: 30px;
+
+      background-color: skyblue;
+      padding: 10px;
+      /* width: 500px; */
+      /* height: 200px; */
+
+    }
+
+    button {
+      font-size: 20px;
+      background-color: orange;
+      padding: 10px;
+    }
+
+    button:hover {
+      background-color: aquamarine;
+      border-radius: 15px;
+    }
+  </style>
+</body>
+
+</html>
