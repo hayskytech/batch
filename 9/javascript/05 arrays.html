@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    items = ['apple', 'bat', 'cat', "dog", "eye"]
+    // document.write(items[1])
+
+    for (i = 0; i < items.length; i++) {
+      document.write(items[i])
+      document.write('<br>')
+    }
+
+    document.write('<hr>')
+
+    fruits = ['apple', 'bat', 'cat', "dog", "eye"]
+
+    for (x of fruits) {
+      document.write(x + '<br>')
+    }
+
+    document.write('<hr>')
+
+    for (n in fruits) {
+      document.write(`${n}) ${fruits[n]} <br>`)
+    }
+
+  </script>
+</body>
+
+</html>
