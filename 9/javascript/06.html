@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    person1 = { name: 'raju', town: 'ndk', age: 12 }
+    person2 = { name: 'ramesh', town: 'knl', age: 23 }
+
+    document.write(person1.name)
+    document.write(person1.age)
+    document.write('<hr>')
+
+
+    friends = [
+      { name: 'suresh', town: 'ndk', age: 12, phone: '684621644' },
+      { name: 'ramesh', town: 'knl', age: 23, phone: '684656465' },
+      { name: 'rani', town: 'knl', age: 23, phone: '321987984' },
+      { name: 'raju', town: 'knl', age: 23, phone: '684621644' },
+    ]
+
+    document.write(friends[0].name)
+    document.write(friends[0].age)
+    document.write(friends[1].age)
+    document.write('<hr>')
+
+    document.write('<table border="1">')
+    i = 1
+    for (x of friends) {
+      document.write(`<tr>`)
+      document.write(`<td>${i}.</td>`)
+      document.write(`<td>${x.name}</td>`)
+      document.write(`<td>${x.age}</td>`)
+      document.write(`<td>${x.town}</td>`)
+      document.write(`<td>${x.phone}</td>`)
+      document.write(`</tr>`)
+      i++
+    }
+
+    document.write('</table>')
+  </script>
+</body>
+
+</html>

@@ -19,7 +19,7 @@
 
     document.write('<hr>')
 
-    fruits = ['apple', 'bat', 'cat', "dog", "eye"]
+    fruits = ['apple', 'bat', 'cat', "dog", "eye", "frog"]
 
     for (x of fruits) {
       document.write(x + '<br>')
@@ -28,6 +28,8 @@
     document.write('<hr>')
 
     for (n in fruits) {
+      if (n === '2') continue
+      if (n === '4') break
       document.write(`${n}) ${fruits[n]} <br>`)
     }
 
