@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h3>Addition</h3>
+  X: <input type="number" id="x" onchange="addition()" value="6">
+  <br>
+  Y: <input type="number" id="y" onchange="addition()" value="4">
+  <br>
+  <h3>Result:</h3>
+  <h3 id="ans"></h3>
+
+  <script>
+
+    function addition() {
+      x = document.getElementById("x").value
+      y = document.getElementById("y").value
+      ans = (parseInt(x) + parseInt(y))
+      document.getElementById("ans").innerHTML = ans
+    }
+    addition()
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function run() {
+      window.alert("hai")
+    }
+    function add(a, b) {
+      window.alert(a + b)
+    }
+
+    function avg(x, y, z) {
+      return (x + y + z) / 3
+    }
+
+    ans = avg(2, 6, 8)
+
+  </script>
+
+  <button onclick="run()">Click here</button>
+  <button onclick="add(2,5)">Addition</button>
+  <button ondblclick="run()">DBL CLick</button>
+  <button onmouseover="run()">Mouse over</button>
+  <hr>
+
+
+  <h3>Addition</h3>
+  X: <input type="number" id="x">
+  <br>
+  Y: <input type="number" id="y">
+  <br>
+  <button onclick="addition()">Add Now</button>
+
+
+  <script>
+    function addition() {
+      x = document.getElementById("x").value
+      y = document.getElementById("y").value
+      window.alert(parseInt(x) + parseInt(y))
+    }
+  </script>
+
+</body>
+
+</html>
