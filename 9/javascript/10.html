@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <button onclick="decreaseFont()">-</button> -->
+  <button onclick="changeFont(-1)">-</button>
+  <button onclick="changeH1()">Click to change</button>
+  <button onclick="resetFont()">Reset</button>
+  <button onclick="changeFont(+1)">+</button>
+  <!-- <button onclick="increaseFont()">+</button> -->
+  <h1 id="hello">Hello</h1>
+
+  <script>
+    function changeH1() {
+      document.getElementById('hello').innerHTML = 'Hai'
+      document.getElementById('hello').style.color = 'red'
+      document.getElementById('hello').style.backgroundColor = 'skyblue'
+      document.getElementById('hello').style.padding = '20px'
+    }
+    function increaseFont() {
+      n = document.getElementById('hello').style.fontSize
+      if (!n) {
+        n = '32px'
+      }
+      n = n.slice(0, -2)
+      n = Number(n) + 2
+      // window.alert(n)
+      document.getElementById('hello').style.fontSize = n + 'px'
+    }
+    function decreaseFont() {
+      n = document.getElementById('hello').style.fontSize
+      if (!n) {
+        n = '32px'
+      }
+      n = n.slice(0, -2)
+      n = Number(n) - 2
+      // window.alert(n)
+      document.getElementById('hello').style.fontSize = n + 'px'
+    }
+
+    function changeFont(value) {
+      n = document.getElementById('hello').style.fontSize
+      if (!n) n = '32px'
+      n = n.slice(0, -2)
+      n = Number(n) + value
+      document.getElementById('hello').style.fontSize = n + 'px'
+    }
+
+    function resetFont() {
+      document.getElementById('hello').style.fontSize = '32px'
+      document.getElementById('hello').innerHTML = 'Hello'
+      document.getElementById('hello').style.color = ''
+      document.getElementById('hello').style.backgroundColor = ''
+      document.getElementById('hello').style.padding = ''
+    }
+  </script>
+
+</body>
+
+</html>

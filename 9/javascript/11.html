@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn1">Click here</button>
+
+  <script>
+    document.getElementById("btn1").addEventListener("click", run)
+
+    function run() {
+      window.alert('aksjdaksd')
+    }
+  </script>
+
+
+  <select onchange="run1(this)">
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+  <input type="number" min="15" max="100" value="32" onchange="run2(this)">
+
+  <h1 id="demo">Empty</h1>
+
+  <script>
+    function run1(x) {
+      document.getElementById('demo').innerHTML = x.value
+    }
+    function run2(x) {
+      if (x.value < 15 || x.value > 100) return
+      document.getElementById('demo').style.fontSize = x.value + 'px'
+    }
+  </script>
+
+</body>
+
+</html>
