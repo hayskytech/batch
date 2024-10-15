@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <h1>Todo List</h1>
+  <form onsubmit="addItem(event)">
+    <input type="text" id="inp">
+    <button>Add Item</button>
+  </form>
+
+  <ul id="list"></ul>
+
+  <script>
+    function addItem(event) {
+      event.preventDefault()
+      inp = document.getElementById('inp')
+      list = document.getElementById('list')
+
+      li = document.createElement('li')
+      li.innerHTML = inp.value + `<button onclick="del(this)">x</button>`
+
+      list.appendChild(li)
+      inp.value = ''
+    }
+
+    function del(btn) {
+      btn.parentElement.remove()
+    }
+  </script>
+
+  <style>
+    li button {
+      float: right;
+    }
+
+    li {
+      max-width: 300px;
+      margin: 5px;
+    }
+  </style>
+</body>
+
+</html>
