@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <h1>Todo List</h1>
+  <form onsubmit="addItem(event)">
+    <input type="text" id="inp">
+    <button>Add Item</button>
+  </form>
+
+  <ul id="list"></ul>
+
+  <script>
+    arr = []
+    function render_items() {
+      if (localStorage.getItem('todos')) {
+        item_string = localStorage.getItem('todos')
+        arr = JSON.parse(item_string)
+      }
+      list = document.getElementById('list')
+      list.innerHTML = ''
+      for (id in arr) {
+        item = arr[id]
+        li = document.createElement('li')
+        li.innerHTML = item + `<button onclick="del(this, ${id})">x</button>`
+        list.appendChild(li)
+      }
+    }
+
+    render_items()
+
+    function addItem(event) {
+      event.preventDefault()    // avoids page reload
+      inp = document.getElementById('inp')
+
+      arr.push(inp.value)
+      localStorage.setItem('todos', JSON.stringify(arr))
+      inp.value = ''
+      render_items()
+    }
+
+    function del(btn, id) {
+      btn.parentElement.remove()
+      arr.splice(id, 1)
+      localStorage.setItem('todos', JSON.stringify(arr))
+      render_items()
+    }
+  </script>
+
+  <style>
+    li button {
+      float: right;
+    }
+
+    li {
+      max-width: 300px;
+      margin: 5px;
+    }
+  </style>
+</body>
+
+</html>
